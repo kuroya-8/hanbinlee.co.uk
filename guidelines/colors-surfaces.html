@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x170" name="Surfaces & Text Roles" subtitle="Semantic aliases for backgrounds and ink" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; padding: 22px 24px; background: var(--surface-page); }
+  .grid { display:grid; grid-template-columns: repeat(5,1fr); gap:12px; }
+  .surf { height: 92px; border-radius: var(--radius-lg); border:1px solid var(--border-default); display:flex; flex-direction:column; justify-content:flex-end; padding:10px; }
+  .surf b { font-size:var(--text-sm); font-weight:var(--fw-semibold); }
+  .surf code { font-size:10px; font-family:var(--font-mono); opacity:.75; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="surf" style="background:var(--surface-page)"><b style="color:var(--text-body)">Page</b><code style="color:var(--text-muted)">--surface-page</code></div>
+    <div class="surf" style="background:var(--surface-mist)"><b style="color:var(--text-body)">Mist</b><code style="color:var(--text-muted)">--surface-mist</code></div>
+    <div class="surf" style="background:var(--surface-tint)"><b style="color:var(--teal-700)">Tint</b><code style="color:var(--teal-600)">--surface-tint</code></div>
+    <div class="surf" style="background:var(--surface-deep)"><b style="color:#fff">Deep</b><code style="color:var(--text-on-dark-muted)">--surface-deep</code></div>
+    <div class="surf" style="background:var(--surface-ink)"><b style="color:#fff">Ink</b><code style="color:var(--text-on-dark-muted)">--surface-ink</code></div>
+  </div>
+</body>
+</html>

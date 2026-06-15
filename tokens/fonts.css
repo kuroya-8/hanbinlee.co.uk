@@ -1,0 +1,41 @@
+/* ============================================================
+   FONTS — Source Sans Pro (brand face)
+   Local woff2 ships 400/700 + italics for offline use.
+   Source Sans 3 (Google) supplies the intermediate weights
+   (300/500/600) the local files don't include.
+   ============================================================ */
+
+/* Intermediate weights via Source Sans 3 (near-identical successor) */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap');
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-pro-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-pro-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-pro-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../assets/fonts/source-sans-pro-bold-italic.woff2') format('woff2');
+}

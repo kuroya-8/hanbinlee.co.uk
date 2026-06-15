@@ -1,0 +1,96 @@
+<!-- @dsCard group="Components" viewport="700x560" name="Core — Buttons, Badges, Tags, Avatar" subtitle="Actions, status and identity primitives" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; padding: 26px 28px; background: var(--surface-page); }
+  .group { margin-bottom: 24px; }
+  .glab { font-size: var(--text-xs); font-weight: var(--fw-semibold); letter-spacing: var(--tracking-caps);
+    text-transform: uppercase; color: var(--text-subtle); margin-bottom: 12px; }
+  .row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+  [data-lucide] { width: 18px; height: 18px; }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script src="../../_ds_bundle.js"></script>
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+  <script type="text/babel">
+    const { Button, IconButton, Badge, Tag, Avatar } = window.HanBinLeeOphthalmologyDesignSystem_17f2f2;
+    const I = (n) => <i data-lucide={n}></i>;
+
+    function Demo() {
+      return (
+        <>
+          <div className="group">
+            <div className="glab">Button — variants</div>
+            <div className="row">
+              <Button variant="primary" iconLeft={I('calendar-check')}>Book a consultation</Button>
+              <Button variant="secondary">Clinical profile</Button>
+              <Button variant="ghost">View fees</Button>
+              <Button variant="subtle">Cancel</Button>
+              <Button variant="accent" iconLeft={I('award')}>Pioneer</Button>
+              <Button variant="danger">Remove</Button>
+            </div>
+          </div>
+          <div className="group">
+            <div className="glab">Button — sizes &amp; states</div>
+            <div className="row">
+              <Button size="sm">Small</Button>
+              <Button size="md">Medium</Button>
+              <Button size="lg" iconRight={I('arrow-right')}>Large</Button>
+              <Button disabled>Disabled</Button>
+            </div>
+          </div>
+          <div className="group">
+            <div className="glab">IconButton</div>
+            <div className="row">
+              <IconButton label="Call" variant="primary" shape="circle">{I('phone')}</IconButton>
+              <IconButton label="Email" variant="secondary" shape="circle">{I('mail')}</IconButton>
+              <IconButton label="WhatsApp" variant="ghost">{I('message-circle')}</IconButton>
+              <IconButton label="More" variant="subtle">{I('more-horizontal')}</IconButton>
+            </div>
+          </div>
+          <div className="group">
+            <div className="glab">Badge</div>
+            <div className="row">
+              <Badge tone="success" dot>Confirmed</Badge>
+              <Badge tone="warning" dot>Pending</Badge>
+              <Badge tone="primary">NHS &amp; Private</Badge>
+              <Badge tone="accent">EndoArt Pioneer</Badge>
+              <Badge tone="neutral">Follow-up</Badge>
+              <Badge tone="primary" solid>New</Badge>
+            </div>
+          </div>
+          <div className="group">
+            <div className="glab">Tag</div>
+            <div className="row">
+              <Tag>Cataract surgery</Tag>
+              <Tag>Corneal conditions</Tag>
+              <Tag variant="outline">Dry eye</Tag>
+              <Tag variant="neutral">YAG laser</Tag>
+              <Tag variant="outline" onRemove={() => {}}>Filter</Tag>
+            </div>
+          </div>
+          <div className="group" style={{ marginBottom: 0 }}>
+            <div className="glab">Avatar</div>
+            <div className="row">
+              <Avatar size="sm" name="Han Bin Lee" />
+              <Avatar size="md" name="Han Bin Lee" />
+              <Avatar size="lg" src="../../assets/images/portrait.jpg" name="Han Bin Lee" ring />
+              <Avatar size="md" src="../../assets/images/portrait.jpg" name="Han Bin Lee" />
+            </div>
+          </div>
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+    setTimeout(() => window.lucide && window.lucide.createIcons(), 60);
+  </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* ============================================================
+   COLORS — Han Bin Lee Ophthalmology
+   Signature petrol-teal + gold accent on a cool clinical slate.
+   Base ramps first, then semantic aliases.
+   ============================================================ */
+:root {
+  /* ---- Petrol Teal (primary / brand signature #007A87) ---- */
+  --teal-50:  #ecf6f7;
+  --teal-100: #cfe8ea;
+  --teal-200: #a3d3d8;
+  --teal-300: #6bb8bf;
+  --teal-400: #2f97a1;
+  --teal-500: #007a87;  /* brand primary */
+  --teal-600: #00646f;
+  --teal-700: #004a55;  /* deep — strong headings, prices */
+  --teal-800: #003a43;
+  --teal-900: #06262c;  /* near-black ink with teal cast */
+
+  /* ---- Gold (accent — favicon spark + EndoArt pioneer award) ---- */
+  --gold-200: #ffe9a8;
+  --gold-300: #ffd75e;
+  --gold-400: #ffc107;  /* accent */
+  --gold-500: #e6a600;
+  --gold-600: #b7820a;
+
+  /* ---- Neutral slate (cool clinical greys) ---- */
+  --neutral-0:   #ffffff;
+  --neutral-50:  #f6f8f9;
+  --neutral-100: #eef1f3;
+  --neutral-200: #e2e7ea;
+  --neutral-300: #cdd5d9;
+  --neutral-400: #a4afb6;
+  --neutral-500: #76838c;
+  --neutral-600: #586771;
+  --neutral-700: #3d4a52;
+  --neutral-800: #262f35;
+  --neutral-900: #161c20;
+
+  /* ---- Semantic raw ---- */
+  --green-500:  #1f8a5b;
+  --green-50:   #e7f4ee;
+  --amber-500:  #b7820a;
+  --amber-50:   #fbf2da;
+  --red-500:    #c0392b;
+  --red-50:     #fbeae8;
+
+  /* ---- Brand mark heritage (logo only — not for UI) ---- */
+  --brand-ink:      #5a4a3a;  /* calligraphic brown brushstroke */
+  --brand-han-red:  #cd2e3a;  /* taegeuk red (Korean flag) */
+  --brand-han-blue: #0047a0;  /* taegeuk blue (Korean flag) */
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+
+  /* Brand / primary */
+  --color-primary:         var(--teal-500);
+  --color-primary-hover:   var(--teal-600);
+  --color-primary-active:  var(--teal-700);
+  --color-primary-strong:  var(--teal-700);
+  --color-primary-soft:    var(--teal-50);
+  --color-primary-tint:    var(--teal-100);
+  --color-on-primary:      #ffffff;
+
+  --color-accent:          var(--gold-400);
+  --color-accent-strong:   var(--gold-600);
+  --color-accent-soft:     var(--gold-200);
+  --color-on-accent:       var(--teal-900);
+
+  /* Text */
+  --text-strong:   var(--teal-900);
+  --text-heading:  var(--neutral-900);
+  --text-body:     var(--neutral-800);
+  --text-muted:    var(--neutral-600);
+  --text-subtle:   var(--neutral-500);
+  --text-on-dark:  #eaf3f4;
+  --text-on-dark-muted: #a9c2c6;
+  --text-link:     var(--teal-600);
+  --text-link-hover: var(--teal-700);
+
+  /* Surfaces */
+  --surface-page:    #ffffff;
+  --surface-card:    #ffffff;
+  --surface-mist:    var(--neutral-50);
+  --surface-sunken:  var(--neutral-100);
+  --surface-tint:    var(--teal-50);
+  --surface-ink:     var(--teal-900);
+  --surface-deep:    var(--teal-700);
+
+  /* Borders / dividers */
+  --border-subtle:  var(--neutral-100);
+  --border-default: var(--neutral-200);
+  --border-strong:  var(--neutral-300);
+  --border-tint:    var(--teal-100);
+
+  /* Semantic states */
+  --color-success:      var(--green-500);
+  --color-success-soft: var(--green-50);
+  --color-warning:      var(--amber-500);
+  --color-warning-soft: var(--amber-50);
+  --color-danger:       var(--red-500);
+  --color-danger-soft:  var(--red-50);
+  --color-info:         var(--teal-500);
+  --color-info-soft:    var(--teal-50);
+
+  /* Focus */
+  --focus-ring:        0 0 0 3px rgba(0, 122, 135, 0.28);
+  --focus-ring-color:  var(--teal-500);
+
+  /* Selection */
+  --selection-bg:   var(--teal-100);
+  --selection-text: var(--teal-900);
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
