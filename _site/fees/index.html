@@ -104,36 +104,40 @@
 
 <!-- Persistent Control Logic -->
 <script>
-  // --- Initialization (Runs immediately to prevent flashing) ---
-  let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : 100;
+  // --- Initialization ---
+  // We changed the default starting size from 100 to 115 (approx 18.5px)
+  let defaultSize = 115; 
+  let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : defaultSize;
   
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
   }
-  if (textSizeMultiplier !== 100) {
-    document.documentElement.style.fontSize = textSizeMultiplier + "%";
-  }
+  
+  // This ensures the new larger font size is applied immediately when the page loads
+  document.documentElement.style.fontSize = textSizeMultiplier + "%";
 
   // --- Text Resizer Logic ---
   function adjustTextSize(direction) {
     textSizeMultiplier += (direction * 10);
-    if (textSizeMultiplier > 160) textSizeMultiplier = 160; 
-    if (textSizeMultiplier < 80) textSizeMultiplier = 80;   
+    
+    // Adjusted safety limits: allows text to get much larger (180%), 
+    // and stops patients from accidentally making it smaller than standard (100%)
+    if (textSizeMultiplier > 180) textSizeMultiplier = 180; 
+    if (textSizeMultiplier < 100) textSizeMultiplier = 100;   
+    
     document.documentElement.style.fontSize = textSizeMultiplier + "%";
-    localStorage.setItem('textSize', textSizeMultiplier); // Saves setting
+    localStorage.setItem('textSize', textSizeMultiplier); 
   }
 
   function resetTextSize() {
-    textSizeMultiplier = 100;
-    document.documentElement.style.fontSize = "100%";
-    localStorage.setItem('textSize', 100); // Resets saved setting
+    textSizeMultiplier = defaultSize; // Resets back to our new 115% baseline
+    document.documentElement.style.fontSize = defaultSize + "%";
+    localStorage.setItem('textSize', defaultSize); 
   }
 
   // --- Dark Mode Logic ---
   function toggleDarkMode() {
     document.body.classList.toggle('dark-theme');
-    
-    // Checks if the theme is now dark, and saves the preference
     if (document.body.classList.contains('dark-theme')) {
       localStorage.setItem('theme', 'dark');
     } else {
@@ -240,10 +244,10 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="/asset/images/eye-favicon.svg" alt="">
+        <img src="/assets/images/eye-favicon.svg" alt="">
         <span>Han Bin Lee</span>
       </div>
-      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
+      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across the NHS and private practice.</p>
     </div>
     <div class="footer-col">
       <h4>Practice</h4>
@@ -253,18 +257,32 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a class="line" href="tel:+447737228164">Appointments: 07737 228 164</a></li>
-        <li><a class="line" href="https://wa.me/447737228164 >Click here<">WhatsApp available</a></li>
+        <li><a class="line" href="tel:+447737228164">Appointments: 077 37 228 164</a></li>
+        <li><a class="line" href="https://wa.me/447737228164 >Click here<">WhatsApp available - click here</a></li>
         <li><span class="line">Parkside Suite, Frimley GU16 7UJ</span></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Miss Han Bin Lee. All rights reserved.</span>
-    <div style="text-align: right; width: 100%;">
-  <a href="/privacy-policy" style="color: white;">Privacy Policy</a> 
-  <span style="color: white;"> - </span> 
-  <a href="/cookies-policy" style="color: white;">Cookies Policy</a>
+<hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 40px 0 20px 0;">
+
+<div style="display: flex; justify-content: space-between; ...">
+  </div>
+<!-- Footer Bottom Row -->
+<div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px; padding-top: 15px;">
+  
+  <!-- Left Side: Copyright -->
+  <div style="margin: 0; color: #a1a1aa;">
+    &copy; 2026 Miss Han Bin Lee. All rights reserved.
+  </div>
+  
+  <!-- Right Side: Policy Links -->
+  <div style="margin: 0;">
+    <a href="/privacy-policy" style="color: white;">Privacy Policy</a> 
+    <span style="color: white;"> - </span> 
+    <a href="/cookies-policy" style="color: white;">Cookies Policy</a>
+  </div>
+
+</div>
 </div>
   </div>
 </footer>

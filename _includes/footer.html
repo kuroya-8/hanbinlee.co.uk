@@ -2,10 +2,10 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="{{ '/assets/images/logo-mark.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/eye-favicon.svg' | relative_url }}" alt="">
         <span>{{ site.practice.full_name }}</span>
       </div>
-      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
+      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across the NHS and private practice.</p>
     </div>
     <div class="footer-col">
       <h4>Practice</h4>
@@ -20,17 +20,31 @@
       <h4>Contact</h4>
       <ul>
         <li><a class="line" href="{{ site.practice.phone_href }}">Appointments: {{ site.practice.phone }}</a></li>
-        <li><a class="line" href="{{ site.practice.whatsapp }}">WhatsApp available</a></li>
+        <li><a class="line" href="{{ site.practice.whatsapp }}">WhatsApp available - click here</a></li>
         <li><span class="line">Parkside Suite, Frimley GU16 7UJ</span></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© {{ 'now' | date: "%Y" }} {{ site.practice.honorific }} {{ site.practice.full_name }}. All rights reserved.</span>
-    <div style="text-align: right; width: 100%;">
-  <a href="/privacy-policy" style="color: white;">Privacy Policy</a> 
-  <span style="color: white;"> - </span> 
-  <a href="/cookies-policy" style="color: white;">Cookies Policy</a>
+<hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 40px 0 20px 0;">
+
+<div style="display: flex; justify-content: space-between; ...">
+  </div>
+<!-- Footer Bottom Row -->
+<div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px; padding-top: 15px;">
+  
+  <!-- Left Side: Copyright -->
+  <div style="margin: 0; color: #a1a1aa;">
+    &copy; 2026 Miss Han Bin Lee. All rights reserved.
+  </div>
+  
+  <!-- Right Side: Policy Links -->
+  <div style="margin: 0;">
+    <a href="/privacy-policy" style="color: white;">Privacy Policy</a> 
+    <span style="color: white;"> - </span> 
+    <a href="/cookies-policy" style="color: white;">Cookies Policy</a>
+  </div>
+
+</div>
 </div>
   </div>
 </footer>

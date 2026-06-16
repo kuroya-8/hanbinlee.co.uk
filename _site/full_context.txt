@@ -30,7 +30,7 @@
         <img src="{{ '/assets/images/eye-favicon.svg' | relative_url }}" alt="">
         <span>{{ site.practice.full_name }}</span>
       </div>
-      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
+      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across the NHS and private practice.</p>
     </div>
     <div class="footer-col">
       <h4>Practice</h4>

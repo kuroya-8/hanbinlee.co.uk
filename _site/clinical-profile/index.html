@@ -104,36 +104,40 @@
 
 <!-- Persistent Control Logic -->
 <script>
-  // --- Initialization (Runs immediately to prevent flashing) ---
-  let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : 100;
+  // --- Initialization ---
+  // We changed the default starting size from 100 to 115 (approx 18.5px)
+  let defaultSize = 115; 
+  let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : defaultSize;
   
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
   }
-  if (textSizeMultiplier !== 100) {
-    document.documentElement.style.fontSize = textSizeMultiplier + "%";
-  }
+  
+  // This ensures the new larger font size is applied immediately when the page loads
+  document.documentElement.style.fontSize = textSizeMultiplier + "%";
 
   // --- Text Resizer Logic ---
   function adjustTextSize(direction) {
     textSizeMultiplier += (direction * 10);
-    if (textSizeMultiplier > 160) textSizeMultiplier = 160; 
-    if (textSizeMultiplier < 80) textSizeMultiplier = 80;   
+    
+    // Adjusted safety limits: allows text to get much larger (180%), 
+    // and stops patients from accidentally making it smaller than standard (100%)
+    if (textSizeMultiplier > 180) textSizeMultiplier = 180; 
+    if (textSizeMultiplier < 100) textSizeMultiplier = 100;   
+    
     document.documentElement.style.fontSize = textSizeMultiplier + "%";
-    localStorage.setItem('textSize', textSizeMultiplier); // Saves setting
+    localStorage.setItem('textSize', textSizeMultiplier); 
   }
 
   function resetTextSize() {
-    textSizeMultiplier = 100;
-    document.documentElement.style.fontSize = "100%";
-    localStorage.setItem('textSize', 100); // Resets saved setting
+    textSizeMultiplier = defaultSize; // Resets back to our new 115% baseline
+    document.documentElement.style.fontSize = defaultSize + "%";
+    localStorage.setItem('textSize', defaultSize); 
   }
 
   // --- Dark Mode Logic ---
   function toggleDarkMode() {
     document.body.classList.toggle('dark-theme');
-    
-    // Checks if the theme is now dark, and saves the preference
     if (document.body.classList.contains('dark-theme')) {
       localStorage.setItem('theme', 'dark');
     } else {
@@ -150,18 +154,18 @@
         <h3 class="pname">Miss Han Bin Lee</h3>
         <div class="prole">Consultant Ophthalmologist</div>
         <div style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:var(--text-sm);color:var(--text-muted)">
-          <i data-lucide="check-circle-2" style="color:var(--color-primary)"></i> Adult &amp; senior care
+          <i data-lucide="check-circle-2" style="color:var(--color-primary)"></i> Adult &amp; senior care (remove?)
         </div>
       </div>
       <a class="btn btn--primary btn--full mt-6" href="/booking/"><i data-lucide="calendar-check"></i> Book a consultation</a>
       <div class="mt-6" style="padding-top:18px;border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;gap:14px">
         <div class="contact-row">
           <a class="icon-btn icon-btn--round icon-btn--secondary" href="tel:+447737228164" aria-label="Call"><i data-lucide="phone"></i></a>
-          <span><span class="k" style="display:block">Appointments</span><span class="v">07737 228 164</span></span>
+          <span><span class="k" style="display:block">Appointments</span><span class="v">077 37 228 164</span></span>
         </div>
         <div class="contact-row">
           <a class="icon-btn icon-btn--round icon-btn--secondary" href="https://wa.me/447737228164 >Click here<" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
-          <span><span class="k" style="display:block">WhatsApp</span><span class="v">Message the practice</span></span>
+                  <a class="line" href="https://wa.me/447737228164 >Click here<">WhatsApp Click here</a>
         </div>
       </div>
     </aside>
@@ -169,27 +173,33 @@
     <div>
       <span class="eyebrow">Clinical Profile</span>
       <h1 style="margin:0 0 6px;color:var(--text-strong)">Miss Han Bin Lee</h1>
-      <div style="font-size:var(--text-lg);color:var(--text-muted);margin-bottom:24px">Consultant Ophthalmologist</div>
+      <div style="font-size:var(--text-lg);color:var(--text-muted);margin-bottom:24px">Consultant Ophthalmic Surgeon</div>
 
       <blockquote class="quote" style="margin-bottom:28px">Advancing surgical excellence through digital integration and precision patient care.</blockquote>
 
       <p style="font-size:var(--text-md);color:var(--text-body);line-height:1.7">Miss Han Bin Lee is a UK-trained Consultant Ophthalmic Surgeon specialising in advanced cataract removal and corneal conditions. A graduate of University College Londoon and a Fellow of the Royal College of Ophthalmologists (FRCOphth), she brings ssub-specialist fellowship training from the renowned Corneoplastic Unit of Queen Victoria Hospital and Frimley Park Hospital to her practice. By utilisaing state-of-the-art diagnostic imaging and high-precision micro-incision surgical technology, her practice is dedicatred to achieving the highest standard of visual outcomes. Every procedure is delivered within a calm, reassuring and patient-focussed environment. Committed to shaping the future of her specialty, Miss Lee serves as a surgical trainer and clinical supervisor, actively mentoring and training the next generation of ophthalmic surgeons.</p>
       <p style="font-size:var(--text-md);color:var(--text-body);line-height:1.7;margin-bottom:32px">Miss Lee holds holds substantive consultant posts at Frimley Health NHS Foundation Trust. Her private practice operates across Parkside Frimley Park, Heatherwood Hospital, and Benenden Hospital, where she remains dedicated to delivering exceptional, patient-centred eye care.</p>
-
+ <p style="font-size:var(--text-md);color:var(--text-body);line-height:1.7;margin-bottom:32px">Specialising in;</p>
       <div class="specialty-tags">
-        <span class="tag">Cataract surgery</span>
+        <span class="tag">Complex cataract surgery</span>
         <span class="tag">Corneal conditions</span>
         <span class="tag">Dry eye management</span>
+        <span class="tag">Extended Depth of Focus or Multifocal (EDOF) lenses</span>
+        <span class="tag">Trifocal lenses</span>
+        <span class="tag">Monofocal and Enhanced Monofocal (Monofocal Plus) lenses</span>
+        <span class="tag">Premium lenses</span>
+        <span class="tag">Toric lenses</span>
+        <span class="tag">Trifocal Toric lenses</span>
         <span class="tag">YAG laser capsulotomy</span>
+                <span class="tag"> and more...</span>
       </div>
 
       <div class="card card--outline card--flush facts">
-        <div class="fact"><div class="fk">Specialties</div><div class="fv">Complex Cataract surgery · Corneal conditions · Dry eye · YAG laser · Premium lenses </div></div>
-        <div class="fact"><div class="fk">NHS base</div><div class="fv">Frimley Health NHS Foundation Trust</div></div>
+          <div class="fact"><div class="fk">NHS base</div><div class="fv">Frimley Health NHS Foundation Trust, Camberley, Surrey · Heatherwood Hospital, Ascot, Berkshire</div></div>
         <div class="fact"><div class="fk">Private practice</div><div class="fv">Frimley, Parkside Hospital · Heatherwood, Parkside Hospital · Benenden Hospital</div></div>
-        <div class="fact"><div class="fk">Qualifications</div><div class="fv">MBBS, University College London (2012), BSci, FRCOphth, CertLRS</div></div>
-        <div class="fact"><div class="fk">Fellowships</div><div class="fv">Corneoplastic Unit, Queen Victoria Hospital · Frimley Park Hospital</div></div>
-        <div class="fact"><div class="fk">Academic</div><div class="fv">Former Honorary Clinical Lecturer, Brighton &amp; Sussex Medical School</div></div>
+        <div class="fact"><div class="fk">Qualifications</div><div class="fv">MBBS (University College London, 2012), BSci, FRCOphth, CertLRS</div></div>
+        <div class="fact"><div class="fk">Fellowships</div><div class="fv">Corneoplastic Unit at Queen Victoria Hospital · Frimley Park Hospital</div></div>
+        <div class="fact"><div class="fk">Academic</div><div class="fv">Former Honorary Clinical Lecturer at Brighton &amp; Sussex Medical School</div></div>
       </div>
     </div>
   </div>
@@ -200,10 +210,10 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="/asset/images/eye-favicon.svg" alt="">
+        <img src="/assets/images/eye-favicon.svg" alt="">
         <span>Han Bin Lee</span>
       </div>
-      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
+      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across the NHS and private practice.</p>
     </div>
     <div class="footer-col">
       <h4>Practice</h4>
@@ -213,18 +223,32 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a class="line" href="tel:+447737228164">Appointments: 07737 228 164</a></li>
-        <li><a class="line" href="https://wa.me/447737228164 >Click here<">WhatsApp available</a></li>
+        <li><a class="line" href="tel:+447737228164">Appointments: 077 37 228 164</a></li>
+        <li><a class="line" href="https://wa.me/447737228164 >Click here<">WhatsApp available - click here</a></li>
         <li><span class="line">Parkside Suite, Frimley GU16 7UJ</span></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Miss Han Bin Lee. All rights reserved.</span>
-    <div style="text-align: right; width: 100%;">
-  <a href="/privacy-policy" style="color: white;">Privacy Policy</a> 
-  <span style="color: white;"> - </span> 
-  <a href="/cookies-policy" style="color: white;">Cookies Policy</a>
+<hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 40px 0 20px 0;">
+
+<div style="display: flex; justify-content: space-between; ...">
+  </div>
+<!-- Footer Bottom Row -->
+<div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px; padding-top: 15px;">
+  
+  <!-- Left Side: Copyright -->
+  <div style="margin: 0; color: #a1a1aa;">
+    &copy; 2026 Miss Han Bin Lee. All rights reserved.
+  </div>
+  
+  <!-- Right Side: Policy Links -->
+  <div style="margin: 0;">
+    <a href="/privacy-policy" style="color: white;">Privacy Policy</a> 
+    <span style="color: white;"> - </span> 
+    <a href="/cookies-policy" style="color: white;">Cookies Policy</a>
+  </div>
+
+</div>
 </div>
   </div>
 </footer>

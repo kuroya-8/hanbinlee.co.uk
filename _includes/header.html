@@ -95,36 +95,40 @@
 
 <!-- Persistent Control Logic -->
 <script>
-  // --- Initialization (Runs immediately to prevent flashing) ---
-  let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : 100;
+  // --- Initialization ---
+  // We changed the default starting size from 100 to 115 (approx 18.5px)
+  let defaultSize = 115; 
+  let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : defaultSize;
   
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-theme');
   }
-  if (textSizeMultiplier !== 100) {
-    document.documentElement.style.fontSize = textSizeMultiplier + "%";
-  }
+  
+  // This ensures the new larger font size is applied immediately when the page loads
+  document.documentElement.style.fontSize = textSizeMultiplier + "%";
 
   // --- Text Resizer Logic ---
   function adjustTextSize(direction) {
     textSizeMultiplier += (direction * 10);
-    if (textSizeMultiplier > 160) textSizeMultiplier = 160; 
-    if (textSizeMultiplier < 80) textSizeMultiplier = 80;   
+    
+    // Adjusted safety limits: allows text to get much larger (180%), 
+    // and stops patients from accidentally making it smaller than standard (100%)
+    if (textSizeMultiplier > 180) textSizeMultiplier = 180; 
+    if (textSizeMultiplier < 100) textSizeMultiplier = 100;   
+    
     document.documentElement.style.fontSize = textSizeMultiplier + "%";
-    localStorage.setItem('textSize', textSizeMultiplier); // Saves setting
+    localStorage.setItem('textSize', textSizeMultiplier); 
   }
 
   function resetTextSize() {
-    textSizeMultiplier = 100;
-    document.documentElement.style.fontSize = "100%";
-    localStorage.setItem('textSize', 100); // Resets saved setting
+    textSizeMultiplier = defaultSize; // Resets back to our new 115% baseline
+    document.documentElement.style.fontSize = defaultSize + "%";
+    localStorage.setItem('textSize', defaultSize); 
   }
 
   // --- Dark Mode Logic ---
   function toggleDarkMode() {
     document.body.classList.toggle('dark-theme');
-    
-    // Checks if the theme is now dark, and saves the preference
     if (document.body.classList.contains('dark-theme')) {
       localStorage.setItem('theme', 'dark');
     } else {
