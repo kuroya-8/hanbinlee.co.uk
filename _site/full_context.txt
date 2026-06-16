@@ -27,7 +27,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="{{ '/assets/images/logo-mark.png' | relative_url }}" alt="">
+        <img src="{{ '/assets/images/eye-favicon.svg' | relative_url }}" alt="">
         <span>{{ site.practice.full_name }}</span>
       </div>
       <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
@@ -57,7 +57,7 @@
 </footer>
 <header class="site-header">
   <a class="brand" href="{{ '/' | relative_url }}">
-    <img src="{{ '/assets/images/logo-mark.png' | relative_url }}" alt="">
+    <img src="{{ '/assets/images/eye-favicon.svg' | relative_url }}" alt="">
     <span>
       <span class="name" style="display:block">{{ site.practice.honorific }} {{ site.practice.full_name }}</span>
       <span class="role">{{ site.tagline }}</span>
