@@ -4,4 +4,5 @@ title: Cookies Policy
 permalink: /cookies-policy/
 ---
 
-Write your cookies policy text down here...
+## Cookies
+This website may use cookies to improve user experience. You can control cookies via your browser settings.
