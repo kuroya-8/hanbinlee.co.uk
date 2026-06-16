@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book a Consultation · Miss Han Bin Lee — Consultant Ophthalmologist</title>
+  <meta name="description" content="Request an appointment with Miss Han Bin Lee. The practice confirms within one working day.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/eye-favicon.svg">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+  <a class="brand" href="/">
+    <img src="/assets/images/logo-mark.png" alt="">
+    <span>
+      <span class="name" style="display:block">Miss Han Bin Lee</span>
+      <span class="role">Consultant Ophthalmologist</span>
+    </span>
+  </a>
+
+  <button class="nav-toggle icon-btn" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+    <i data-lucide="menu"></i>
+  </button>
+
+  <nav class="site-nav" data-nav><a href="/">Home</a><a href="/clinical-profile/">Clinical Profile</a><a href="/fees/">Fees</a><a href="/press/">Press</a><a class="btn btn--primary btn--sm" href="/booking/">
+      <i data-lucide="calendar-check"></i> Book
+    </a>
+  </nav>
+</header>
+
+  <main id="main">
+    <div class="section--mist" style="min-height:70vh">
+  <div data-booking-wrap>
+    <div class="booking-grid">
+      <div>
+        <span class="eyebrow">Book a Consultation</span>
+        <h1 style="margin:0 0 8px;color:var(--text-strong)">Request an appointment</h1>
+        <p style="font-size:var(--text-md);color:var(--text-muted);margin:0 0 28px">Complete the form and the practice will be in touch to confirm a time.</p>
+
+        <div class="card card--lg">
+          <!-- To collect real submissions, point action at a form backend
+               (e.g. Formspree) and remove data-booking-form / the JS handler. -->
+          <form data-booking-form novalidate>
+            <div style="margin-bottom:18px">
+              <div style="font-size:var(--text-sm);font-weight:var(--fw-semibold);color:var(--text-body);margin-bottom:8px">Payment method</div>
+              <div class="seg seg--full" role="tablist" data-seg="pay">
+                <button type="button" role="tab" aria-selected="true" data-target="Self-pay">Self-pay</button>
+                <button type="button" role="tab" aria-selected="false" data-target="Insured">Insured</button>
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-bottom:16px">
+              <div class="field"><label for="fn">First name <span class="req">*</span></label><input class="input" id="fn" placeholder="Jane" required></div>
+              <div class="field"><label for="ln">Last name <span class="req">*</span></label><input class="input" id="ln" placeholder="Doe" required></div>
+              <div class="field">
+                <label for="em">Email <span class="req">*</span></label>
+                <div class="input-group"><i data-lucide="mail"></i><input class="input" id="em" type="email" placeholder="jane@email.com" required></div>
+              </div>
+              <div class="field">
+                <label for="ph">Phone <span class="req">*</span></label>
+                <div class="input-group"><i data-lucide="phone"></i><input class="input" id="ph" placeholder="07700 900000" required></div>
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-bottom:16px">
+              <div class="field">
+                <label for="loc">Preferred location <span class="req">*</span></label>
+                <select class="select" id="loc" required>
+                  <option value="" disabled selected>Choose a clinic</option>
+                  <option>Parkside Suite, Frimley</option>
+                  <option>Benenden Hospital</option>
+                  <option>Parkside Hospital</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="apt">Appointment type</label>
+                <select class="select" id="apt">
+                  <option>First consultation</option>
+                  <option>Follow-up</option>
+                  <option>YAG laser capsulotomy</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" data-insurer-field hidden style="margin-bottom:16px">
+              <label for="auth">Insurer authorisation code</label>
+              <input class="input" id="auth" placeholder="e.g. AX-00123">
+              <span class="hint">Required by your insurer before the appointment</span>
+            </div>
+
+            <div class="field" style="margin-bottom:18px">
+              <label for="reason">Reason for appointment</label>
+              <textarea class="textarea" id="reason" rows="3"></textarea>
+              <span class="hint">Briefly describe your symptoms or referral</span>
+            </div>
+
+            <label class="checkbox" style="margin-bottom:22px">
+              <input type="checkbox" required>
+              <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+              <span>
+                <span class="label-main" style="display:block">I consent to be contacted about my appointment</span>
+                <span class="label-desc">We'll only use your details to arrange and provide your care.</span>
+              </span>
+            </label>
+
+            <button class="btn btn--primary btn--lg btn--full" type="submit">Submit request <i data-lucide="arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <aside class="booking-aside">
+        <div class="card card--tint card--lg">
+          <h4 style="margin:0 0 14px">What to expect</h4>
+          <div class="expect-row"><i data-lucide="clock"></i><span style="font-size:var(--text-sm)">Confirmation within 1 working day</span></div>
+          <div class="expect-row"><i data-lucide="stethoscope"></i><span style="font-size:var(--text-sm)">Consultant-led assessment</span></div>
+          <div class="expect-row" style="margin-bottom:0"><i data-lucide="file-text"></i><span style="font-size:var(--text-sm)">Clear written treatment plan</span></div>
+        </div>
+        <div class="callout">
+          <span class="callout-icon"><i data-lucide="phone"></i></span>
+          <span class="callout-body"><span class="callout-title">Prefer to call?</span>Appointments line: 07737 228 164 — WhatsApp available.</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="booking-success" data-booking-success hidden>
+    <div class="card card--lg">
+      <span class="ok"><i data-lucide="check-circle-2"></i></span>
+      <h2 style="margin:0 0 10px">Request received</h2>
+      <p style="font-size:var(--text-base);color:var(--text-muted);line-height:1.6;margin:0 0 24px">Thank you — the practice will confirm your appointment by text within one working day.</p>
+      <a class="btn btn--primary" href="/">Back to home</a>
+    </div>
+  </div>
+</div>
+
+  </main>
+  <footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="/assets/images/logo-mark.png" alt="">
+        <span>Han Bin Lee</span>
+      </div>
+      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul><li><a href="/">Home</a></li><li><a href="/clinical-profile/">Clinical Profile</a></li><li><a href="/fees/">Fees</a></li><li><a href="/press/">Press</a></li><li><a href="/booking/">Book a consultation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a class="line" href="tel:+447737228164">Appointments: 07737 228 164</a></li>
+        <li><a class="line" href="https://wa.me/447737228164 >Click here<">WhatsApp available</a></li>
+        <li><span class="line">Parkside Suite, Frimley GU16 7UJ</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Miss Han Bin Lee. All rights reserved.</span>
+    <span>Frimley Health NHS · Benenden · Parkside</span>
+  </div>
+</footer>
+
+
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

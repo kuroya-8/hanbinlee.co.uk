@@ -1,0 +1,53 @@
+# ============================================================
+#  Han Bin Lee — Consultant Ophthalmologist
+#  Jekyll site configuration (GitHub Pages compatible)
+# ============================================================
+
+title: "Han Bin Lee"
+tagline: "Consultant Ophthalmologist"
+description: >-
+  Miss Han Bin Lee is a consultant ophthalmologist specialising in cataract
+  surgery and complex corneal conditions across NHS and private practice in
+  London and Surrey.
+
+# Set `url` to your domain and `baseurl` to "" for a user/org or custom-domain
+# site. For a project page served at https://<user>.github.io/<repo>/, set
+# baseurl: "/<repo>" so all asset links resolve correctly.
+url: "https://hanbinlee.github.io"
+baseurl: ""
+
+lang: en
+
+# Practice details surfaced across the site (edit in one place)
+practice:
+  phone: "07737 228 164"
+  phone_href: "tel:+447737228164"
+  whatsapp: "https://wa.me/447737228164 >Click here<"
+  email: "appointments@hanbinlee.co.uk"
+  honorific: "Miss"
+  full_name: "Han Bin Lee"
+  locations:
+    - "Frimley Health NHS Foundation Trust"
+    - "Benenden Hospital"
+    - "Parkside Hospital"
+    - "Queen Victoria Hospital"
+
+# Primary navigation (order matters)
+nav:
+  - { id: home,    title: "Home",             url: "/" }
+  - { id: profile, title: "Clinical Profile", url: "/clinical-profile/" }
+  - { id: fees,    title: "Fees",             url: "/fees/" }
+  - { id: press,   title: "Press",            url: "/press/" }
+
+# ---- Build ----
+markdown: kramdown
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Permalinks resolve from each page's front matter.

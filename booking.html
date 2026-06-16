@@ -1,0 +1,111 @@
+---
+layout: default
+nav_id: booking
+permalink: /booking/
+title: "Book a Consultation"
+description: "Request an appointment with Miss Han Bin Lee. The practice confirms within one working day."
+---
+
+<div class="section--mist" style="min-height:70vh">
+  <div data-booking-wrap>
+    <div class="booking-grid">
+      <div>
+        <span class="eyebrow">Book a Consultation</span>
+        <h1 style="margin:0 0 8px;color:var(--text-strong)">Request an appointment</h1>
+        <p style="font-size:var(--text-md);color:var(--text-muted);margin:0 0 28px">Complete the form and the practice will be in touch to confirm a time.</p>
+
+        <div class="card card--lg">
+          <!-- To collect real submissions, point action at a form backend
+               (e.g. Formspree) and remove data-booking-form / the JS handler. -->
+          <form data-booking-form novalidate>
+            <div style="margin-bottom:18px">
+              <div style="font-size:var(--text-sm);font-weight:var(--fw-semibold);color:var(--text-body);margin-bottom:8px">Payment method</div>
+              <div class="seg seg--full" role="tablist" data-seg="pay">
+                <button type="button" role="tab" aria-selected="true" data-target="Self-pay">Self-pay</button>
+                <button type="button" role="tab" aria-selected="false" data-target="Insured">Insured</button>
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-bottom:16px">
+              <div class="field"><label for="fn">First name <span class="req">*</span></label><input class="input" id="fn" placeholder="Jane" required></div>
+              <div class="field"><label for="ln">Last name <span class="req">*</span></label><input class="input" id="ln" placeholder="Doe" required></div>
+              <div class="field">
+                <label for="em">Email <span class="req">*</span></label>
+                <div class="input-group"><i data-lucide="mail"></i><input class="input" id="em" type="email" placeholder="jane@email.com" required></div>
+              </div>
+              <div class="field">
+                <label for="ph">Phone <span class="req">*</span></label>
+                <div class="input-group"><i data-lucide="phone"></i><input class="input" id="ph" placeholder="07700 900000" required></div>
+              </div>
+            </div>
+
+            <div class="form-row" style="margin-bottom:16px">
+              <div class="field">
+                <label for="loc">Preferred location <span class="req">*</span></label>
+                <select class="select" id="loc" required>
+                  <option value="" disabled selected>Choose a clinic</option>
+                  <option>Parkside Suite, Frimley</option>
+                  <option>Benenden Hospital</option>
+                  <option>Parkside Hospital</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="apt">Appointment type</label>
+                <select class="select" id="apt">
+                  <option>First consultation</option>
+                  <option>Follow-up</option>
+                  <option>YAG laser capsulotomy</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field" data-insurer-field hidden style="margin-bottom:16px">
+              <label for="auth">Insurer authorisation code</label>
+              <input class="input" id="auth" placeholder="e.g. AX-00123">
+              <span class="hint">Required by your insurer before the appointment</span>
+            </div>
+
+            <div class="field" style="margin-bottom:18px">
+              <label for="reason">Reason for appointment</label>
+              <textarea class="textarea" id="reason" rows="3"></textarea>
+              <span class="hint">Briefly describe your symptoms or referral</span>
+            </div>
+
+            <label class="checkbox" style="margin-bottom:22px">
+              <input type="checkbox" required>
+              <span class="box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></span>
+              <span>
+                <span class="label-main" style="display:block">I consent to be contacted about my appointment</span>
+                <span class="label-desc">We'll only use your details to arrange and provide your care.</span>
+              </span>
+            </label>
+
+            <button class="btn btn--primary btn--lg btn--full" type="submit">Submit request <i data-lucide="arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <aside class="booking-aside">
+        <div class="card card--tint card--lg">
+          <h4 style="margin:0 0 14px">What to expect</h4>
+          <div class="expect-row"><i data-lucide="clock"></i><span style="font-size:var(--text-sm)">Confirmation within 1 working day</span></div>
+          <div class="expect-row"><i data-lucide="stethoscope"></i><span style="font-size:var(--text-sm)">Consultant-led assessment</span></div>
+          <div class="expect-row" style="margin-bottom:0"><i data-lucide="file-text"></i><span style="font-size:var(--text-sm)">Clear written treatment plan</span></div>
+        </div>
+        <div class="callout">
+          <span class="callout-icon"><i data-lucide="phone"></i></span>
+          <span class="callout-body"><span class="callout-title">Prefer to call?</span>Appointments line: {{ site.practice.phone }} — WhatsApp available.</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="booking-success" data-booking-success hidden>
+    <div class="card card--lg">
+      <span class="ok"><i data-lucide="check-circle-2"></i></span>
+      <h2 style="margin:0 0 10px">Request received</h2>
+      <p style="font-size:var(--text-base);color:var(--text-muted);line-height:1.6;margin:0 0 24px">Thank you — the practice will confirm your appointment by text within one working day.</p>
+      <a class="btn btn--primary" href="{{ '/' | relative_url }}">Back to home</a>
+    </div>
+  </div>
+</div>

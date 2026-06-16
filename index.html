@@ -1,0 +1,104 @@
+---
+layout: default
+nav_id: home
+permalink: /
+title: null
+description: "Consultant ophthalmologist specialising in cataract surgery and complex corneal conditions in London and Surrey."
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Consultant Ophthalmologist · London &amp; Surrey</span>
+      <h1>Clearer vision, expertly restored.</h1>
+      <p class="lead">{{ site.practice.honorific }} {{ site.practice.full_name }} is a consultant ophthalmologist specialising in cataract surgery and complex corneal conditions — combining digital precision with patient-centred care.</p>
+      <div class="hero-tags">
+        <span class="tag">Complex Cataract Surgery</span>
+        <span class="tag">Corneal Conditions</span>
+        <span class="tag">Dry Eye</span>
+        <span class="tag">YAG Laser</span>
+        <span class="tag">Premium Lenses</span>
+      
+
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn--primary btn--lg" href="{{ '/booking/' | relative_url }}"><i data-lucide="calendar-check"></i> Book a consultation</a>
+        <a class="btn btn--secondary btn--lg" href="{{ '/clinical-profile/' | relative_url }}">Meet the consultant</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="frame">
+        <img src="{{ '/assets/images/portrait.jpg' | relative_url }}" alt="{{ site.practice.honorific }} {{ site.practice.full_name }}">
+      </div>
+      <div class="badge-float">
+        <span class="ico"><i data-lucide="award"></i></span>
+        <span>
+          <span class="t" style="display:block">text</span>
+          <span class="s">text</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="trust-inner">
+    <span class="trust-label">Practising at</span>
+    {%- for place in site.practice.locations -%}
+      <span class="place">{{ place | replace: " Foundation Trust", "" }}</span>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Specialist Services</span>
+      <h2>Focused expertise across the anterior eye</h2>
+    </div>
+    <div class="services-grid">
+      <div class="card card--interactive service">
+        <span class="ico"><i data-lucide="eye"></i></span>
+        <h3>Cataract surgery</h3>
+        <p>Premium lens cataract surgery to restore clear, comfortable vision with rapid recovery.</p>
+      </div>
+      <div class="card card--interactive service">
+        <span class="ico"><i data-lucide="scan-eye"></i></span>
+        <h3>Corneal conditions</h3>
+        <p>Diagnosis and surgical treatment of complex corneal disease, including artificial cornea transplantation.</p>
+      </div>
+      <div class="card card--interactive service">
+        <span class="ico"><i data-lucide="droplet"></i></span>
+        <h3>Dry eye management</h3>
+        <p>Thorough assessment and tailored treatment plans for persistent dry and irritated eyes.</p>
+      </div>
+      <div class="card card--interactive service">
+        <span class="ico"><i data-lucide="zap"></i></span>
+        <h3>YAG laser capsulotomy</h3>
+        <p>Quick, painless laser treatment for clouding that can occur after cataract surgery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="mt-8">
+  <iframe id="0ck21pdl" class="doctify-widget" src="https://www.doctify.com/wv2/average-carousel-rating-widget?containerId=0ck21pdl&dotsArrowsColor=B7BFCE&language=en&profileType=specialist&slugs=han-bin-lee&tenantId=athena-uk&theme=gradientBlue&widgetName=average-carousel-rating-widget" width="100%" frameborder="0" scrolling="no" name="average-carousel-rating-widget">Browser doesn't support frames</iframe>
+  <script type="text/javascript" src="https://www.doctify.com/wv2/doctify-widget-autoresize-plugin.js?tenantId=athena-uk&widgetName=average-carousel-rating-widget&containerId=0ck21pdl"></script>
+</div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="cta-inner">
+    <div>
+      <h2>Ready to see more clearly?</h2>
+      <p>Direct self-pay access — no GP referral required. Most major insurers accepted.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn--accent btn--lg" href="{{ '/booking/' | relative_url }}"><i data-lucide="calendar-check"></i> Book a consultation</a>
+      <a class="btn btn--lg btn--on-dark" href="{{ site.practice.phone_href }}"><i data-lucide="phone"></i> {{ site.practice.phone }}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+---
+layout: default
+nav_id: press
+permalink: /press/
+title: "Press"
+description: "Selected media coverage featuring Miss Han Bin Lee."
+
+# Add new articles to this list right here!
+press_articles:
+  - title: "Researchgate.net Profile"
+    publisher: "Researchgate.net"
+    description: "Networking profile for Han Bin Lee, which displays their published medical research and allows other doctors and scientists to connect"
+    url: "https://www.researchgate.net/profile/Hanbin-Lee"
+    featured: true
+
+  - title: "Webinar: Cataract surgery and special lenses"
+    publisher: "Benendenhospital.org.uk"
+    description: "Learn more about cataract surgery and special lenses with Miss Han Bin Lee, Consultant Ophthalmologist.
+
+Please note that any discounts advertised in this video are exclusive to attendees and registrants of the live event."
+    url: "https://www.benendenhospital.org.uk/webinar-booking/ophthalmology/cataracts-february-2024/"
+    featured: true
+
+  - title: "First commercial transplant using an artificial cornea"
+    publisher: "BBC News"
+    description: "National coverage of a landmark procedure restoring sight where donor tissue was not an option."
+    url: "https://www.bbc.co.uk/news/articles/cv223pj2p8po"
+    featured: true
+
+  - title: "Frimley Health surgeon pioneers artificial cornea transplant"
+    publisher: "Frimley Health NHS"
+    description: "The trust reports on one of the first EndoArt® artificial cornea transplants performed in commercial practice."
+    url: "https://www.fhft.nhs.uk/news/first-commercial-transplant-using-artificial-cornea"
+    featured: true
+---
+
+<div class="section--mist" style="min-height:70vh">
+  <div class="page-hero">
+    <span class="eyebrow">In the Media</span>
+    <h1>Press &amp; recognition</h1>
+    <p>Selected coverage featuring {{ site.practice.honorific }} {{ site.practice.full_name }}.</p>
+  </div>
+
+  <div class="container container--narrow" style="padding-top:36px;padding-bottom:80px">
+    <div class="press-list">
+      
+      <!-- Jekyll loops through your list above and builds a card for each one automatically -->
+      {% for article in page.press_articles %}
+      <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer" class="card card--lg card--interactive press-item" style="text-decoration: none; color: inherit;">
+        <span class="ico"><i data-lucide="newspaper"></i></span>
+        <div style="flex:1">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+            <span style="font-size:var(--text-sm);font-weight:var(--fw-bold);color:var(--text-strong)">{{ article.publisher }}</span>
+            {% if article.featured %}
+            <span class="badge badge--accent">Featured</span>
+            {% endif %}
+          </div>
+          <h3 style="color:var(--text-heading); margin:0 0 4px;">{{ article.title }}</h3>
+          <p style="color:var(--text-muted); margin:0;">{{ article.description }}</p>
+        </div>
+        <span class="arr"><i data-lucide="arrow-up-right"></i></span>
+      </a>
+      {% endfor %}
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a class="btn btn--secondary" href="{{ '/' | relative_url }}">Back to home</a>
+    </div>
+  </div>
+</div>

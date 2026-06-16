@@ -1,0 +1,22 @@
+<header class="site-header">
+  <a class="brand" href="{{ '/' | relative_url }}">
+    <img src="{{ '/assets/images/logo-mark.png' | relative_url }}" alt="">
+    <span>
+      <span class="name" style="display:block">{{ site.practice.honorific }} {{ site.practice.full_name }}</span>
+      <span class="role">{{ site.tagline }}</span>
+    </span>
+  </a>
+
+  <button class="nav-toggle icon-btn" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+    <i data-lucide="menu"></i>
+  </button>
+
+  <nav class="site-nav" data-nav>
+    {%- for item in site.nav -%}
+      <a href="{{ item.url | relative_url }}"{% if page.nav_id == item.id %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>
+    {%- endfor -%}
+    <a class="btn btn--primary btn--sm" href="{{ '/booking/' | relative_url }}">
+      <i data-lucide="calendar-check"></i> Book
+    </a>
+  </nav>
+</header>

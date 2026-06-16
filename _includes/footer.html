@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="{{ '/assets/images/logo-mark.png' | relative_url }}" alt="">
+        <span>{{ site.practice.full_name }}</span>
+      </div>
+      <p>Consultant Ophthalmologist specialising in cataract surgery and complex corneal conditions across NHS and private practice.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Practice</h4>
+      <ul>
+        {%- for item in site.nav -%}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor -%}
+        <li><a href="{{ '/booking/' | relative_url }}">Book a consultation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a class="line" href="{{ site.practice.phone_href }}">Appointments: {{ site.practice.phone }}</a></li>
+        <li><a class="line" href="{{ site.practice.whatsapp }}">WhatsApp available</a></li>
+        <li><span class="line">Parkside Suite, Frimley GU16 7UJ</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© {{ 'now' | date: "%Y" }} {{ site.practice.honorific }} {{ site.practice.full_name }}. All rights reserved.</span>
+    <span>Frimley Health NHS · Benenden · Parkside</span>
+  </div>
+</footer>
