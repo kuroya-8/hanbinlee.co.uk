@@ -12,139 +12,313 @@
 </head>
 <body>
   <header class="site-header">
+
   <a class="brand" href="/">
+
     <img src="/assets/images/eye-favicon.svg" alt="">
+
     <span>
+
       <span class="name" style="display:block">Miss Han Bin Lee</span>
+
       <span class="role">Consultant Ophthalmologist</span>
+
     </span>
+
   </a>
 
+
+
   <button class="nav-toggle icon-btn" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+
     <i data-lucide="menu"></i>
+
   </button>
+
+
 
   <nav class="site-nav" data-nav><a href="/">Home</a><a href="/clinical-profile/">Clinical Profile</a><a href="/fees/">Fees</a><a href="/press/" class="is-active" aria-current="page">Press</a><a class="btn btn--primary btn--sm" href="/booking/">
+
       <i data-lucide="calendar-check"></i> Book
+
     </a>
+
   </nav>
+
 </header>
 
+
+
 <!-- Header Accessibility Controls -->
+
 <div class="header-accessibility" style="display: inline-flex; gap: 8px; align-items: center; margin-left: 15px;">
+
   
+
   <button onclick="adjustTextSize(-1)" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Smaller Text">
+
     <i data-lucide="a-arrow-down" style="width: 18px; height: 18px; color: currentColor;"></i>
+
   </button>
+
   
+
   <button onclick="resetTextSize()" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Reset Text">
+
     <i data-lucide="rotate-ccw" style="width: 16px; height: 16px; color: currentColor;"></i> 
+
   </button>
+
   
+
   <button onclick="adjustTextSize(1)" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Larger Text">
+
     <i data-lucide="a-arrow-up" style="width: 18px; height: 18px; color: currentColor;"></i>
+
   </button>
+
+
 
   <span style="border-left: 1px solid currentColor; opacity: 0.3; height: 16px; margin: 0 4px;"></span>
 
+
+
   <button onclick="toggleDarkMode()" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Toggle Dark Mode">
+
     <i data-lucide="moon-star" style="width: 18px; height: 18px; color: currentColor;"></i>
+
   </button>
+
 </div>
 
+
+
 <!-- Optimized Global Dark Mode CSS -->
+
 <style>
+
   /* 1. The Deep Background */
+
   body.dark-theme {
+
     background-color: #121212 !important;
+
     color: #e5e7eb !important;
+
   }
+
+
 
   /* 2. Strip stubborn white backgrounds from layout containers */
+
   body.dark-theme main,
+
   body.dark-theme section,
+
   body.dark-theme .section,
+
   body.dark-theme .container,
+
   body.dark-theme .wrapper,
+
   body.dark-theme .page-content {
+
     background-color: transparent !important;
+
   }
+
+
 
   /* 3. Elevated Cards & Specific UI Elements from Screenshots */
+
   /* This targets the cards, the portrait frame, tags, secondary buttons, and alert boxes */
+
   body.dark-theme .card, 
+
   body.dark-theme .hero-inner,
+
   body.dark-theme .doctify-widget,
+
   body.dark-theme .badge-float,
+
   body.dark-theme .frame,
+
   body.dark-theme .tag,
+
   body.dark-theme .btn--secondary,
+
   body.dark-theme .btn--outline,
+
   body.dark-theme [class*="notice"],
+
   body.dark-theme [class*="alert"] {
+
     background-color: #1e1e1e !important;
+
     border: 1px solid #333333 !important;
+
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+
     color: #f3f4f6 !important;
+
   }
+
+
 
   /* 4. Force Global Typography to be visible */
+
   body.dark-theme h1, body.dark-theme h2, 
+
   body.dark-theme h3, body.dark-theme h4, 
+
   body.dark-theme p, body.dark-theme li, 
+
   body.dark-theme .lead, body.dark-theme span:not(.btn) {
+
     color: #f3f4f6 !important;
+
   }
+
+
 
   /* 5. Keep Links Blue */
+
   body.dark-theme a:not(.btn) {
+
     color: #60a5fa !important; 
+
   }
+
 </style>
 
+
+
 <!-- Persistent Control Logic -->
+
 <script>
+
   // --- Initialization ---
+
   // We changed the default starting size from 100 to 115 (approx 18.5px)
+
   let defaultSize = 115; 
+
   let textSizeMultiplier = localStorage.getItem('textSize') ? parseInt(localStorage.getItem('textSize')) : defaultSize;
+
   
+
   if (localStorage.getItem('theme') === 'dark') {
+
     document.body.classList.add('dark-theme');
+
   }
+
   
+
   // This ensures the new larger font size is applied immediately when the page loads
+
   document.documentElement.style.fontSize = textSizeMultiplier + "%";
 
+
+
   // --- Text Resizer Logic ---
+
   function adjustTextSize(direction) {
+
     textSizeMultiplier += (direction * 10);
+
     
+
     // Adjusted safety limits: allows text to get much larger (180%), 
+
     // and stops patients from accidentally making it smaller than standard (100%)
+
     if (textSizeMultiplier > 180) textSizeMultiplier = 180; 
+
     if (textSizeMultiplier < 100) textSizeMultiplier = 100;   
+
     
+
     document.documentElement.style.fontSize = textSizeMultiplier + "%";
+
     localStorage.setItem('textSize', textSizeMultiplier); 
+
   }
+
+
 
   function resetTextSize() {
+
     textSizeMultiplier = defaultSize; // Resets back to our new 115% baseline
+
     document.documentElement.style.fontSize = defaultSize + "%";
+
     localStorage.setItem('textSize', defaultSize); 
+
   }
 
+
+
   // --- Dark Mode Logic ---
+
   function toggleDarkMode() {
+
     document.body.classList.toggle('dark-theme');
+
     if (document.body.classList.contains('dark-theme')) {
+
       localStorage.setItem('theme', 'dark');
+
     } else {
+
       localStorage.setItem('theme', 'light');
+
+    }
+
+  }
+
+</script>
+
+<!-- TARGETED MOBILE LAYOUT FIXES -->
+<style>
+  /* 1. Fix the rigid Facts table so it is allowed to shrink */
+  .fact {
+    grid-template-columns: 180px minmax(0, 1fr) !important;
+  }
+
+  /* Apply these rules ONLY to mobile screens */
+  @media screen and (max-width: 768px) {
+    
+    /* 2. Stack the Clinical Profile layout (Picture on top, text below) */
+    .profile-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 32px !important;
+    }
+
+    /* 3. Stack the Facts table rows (Title on top, value below) */
+    .fact {
+      grid-template-columns: 1fr !important;
+      padding: 16px !important;
+      gap: 6px !important;
+    }
+
+    /* 4. Stop Maps (iframes), Images, and Press Cards from pushing off screen */
+    .card, iframe, img, .frame {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    /* 5. Force long text (like web addresses or hospital names) to wrap safely */
+    .fv, p, h1, h2, h3, h4, a, span {
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+      max-width: 100% !important;
     }
   }
-</script>
+</style>
   <main id="main">
     <div class="section--mist" style="min-height:70vh">
   <div class="page-hero">

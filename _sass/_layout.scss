@@ -157,16 +157,21 @@
 // ---- Responsive ----
 @media (max-width: 920px) {
   :root { --gutter: 24px; }
-  .hero-inner, .feature, .profile-grid, .booking-grid { grid-template-columns: 1fr; }
+  
+  /* THE FIX: Changed 1fr to minmax(0, 1fr) so ALL main layouts can shrink on phones */
+  .hero-inner, .feature, .profile-grid, .booking-grid { grid-template-columns: minmax(0, 1fr); }
   .hero-figure { order: -1; }
   .hero-figure .frame img { height: 320px; }
+  
   .services-grid { grid-template-columns: 1fr 1fr; }
-  .fee-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .fee-grid { grid-template-columns: minmax(0, 1fr); }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  
   .profile-card, .booking-aside { position: static; }
   .feature .body { padding: 12px; }
   .hero h1 { font-size: var(--text-4xl); }
 }
+
 @media (max-width: 600px) {
   .site-nav { display: none; }
   .site-nav.is-open {
@@ -177,8 +182,42 @@
   }
   .site-nav.is-open .btn { margin-left: 0; margin-top: 8px; }
   .nav-toggle { display: inline-flex; }
-  .services-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
+  
+  .services-grid { grid-template-columns: minmax(0, 1fr); }
+  .form-row { grid-template-columns: minmax(0, 1fr); }
   .section { padding: var(--space-9) 0; }
   .brand .role { display: none; }
+
+  /* --- IRONCLAD MOBILE FIXES --- */
+  
+  /* 1. Physically stop the screen from sliding sideways into white space */
+  html, body { overflow-x: hidden !important; width: 100%; }
+  
+  /* 2. Force all padding/margins to stay strictly inside the screen limits */
+  *, *::before, *::after { box-sizing: border-box !important; }
+
+  /* 3. Stack the Profile Facts */
+  .fact { grid-template-columns: minmax(0, 1fr); padding: 16px 0; gap: 8px; }
+
+  /* 4. Stop Google Maps from pushing off screen */
+  iframe { max-width: 100% !important; }
+
+  /* 5. Fix the squished Press Cards */
+  .press-item { align-items: flex-start; gap: 14px; }
+  
+  /* This tells the middle text container to expand and fill the empty space */
+  .press-item > *:not(.ico):not(.arr) { flex: 1 1 0%; min-width: 0; }
+  
+  .press-item p, .press-item h3 { overflow-wrap: break-word; word-wrap: break-word; }
+
+  /* 6. Ensure UI cards don't break horizontal margins */
+  .card, .doctify-widget { max-width: 100%; }
+
+  /* 7. The Ultimate Text Wrapper: Forces all typography to wrap inside its container */
+  .profile-grid > div { min-width: 0; width: 100%; }
+  p, h1, h2, h3, h4, blockquote, span, a, .fv {
+     white-space: normal !important;
+     word-wrap: break-word !important;
+     overflow-wrap: break-word !important;
+  }
 }
