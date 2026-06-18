@@ -21,73 +21,95 @@ description: "Consultation and surgery fees for self-pay and insured patients. N
       </div>
     </div>
 
+    <!-- SELF-PAY PANEL START -->
     <div data-panel="fees" data-panel-value="self">
-      <div class="fee-grid">
-        
-        <div class="card card--lg">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
-            <h4 style="margin:0">Parkside Suite, Frimley</h4>
-            <a href="https://www.google.com/maps/search/?api=1&query=Frimley+Park+Hospital,+Portsmouth+Rd,+Camberley+GU16+7UJ" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:var(--text-sm); font-weight:var(--fw-semibold); color:var(--color-primary); text-decoration:none;">
-              <i data-lucide="map-pin" style="width: 26px; height: 26px; flex-shrink: 0;"></i>
-              <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
-                <span>Map</span>
-                <span>click here</span>
-              </span>
-            </a>
-          </div>
-          <p style="font-size:var(--text-sm);color:var(--text-subtle);margin:0 0 16px">Frimley Park Hospital, Portsmouth Rd, Camberley GU16 7UJ</p>
-          <div class="fee-row"><span>First consultation</span><span class="amt">£250</span></div>
-          <div class="fee-row"><span>Follow-up consultation</span><span class="amt">£175</span></div>
-          <div class="fee-row"><span>Treatment</span><span class="amt">On request</span></div>
-        </div>
-        
-        <div class="card card--lg">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
-            <h4 style="margin:0">Parkside Suite, Heatherwood</h4>
-            <a href="https://www.google.com/maps/search/?api=1&query=Parkside+Suite,+Heatherwood+Hospital,+Brook+Avenue,+Ascot+SL5+7GB" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:var(--text-sm); font-weight:var(--fw-semibold); color:var(--color-primary); text-decoration:none;">
-              <i data-lucide="map-pin" style="width: 26px; height: 26px; flex-shrink: 0;"></i>
-              <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
-                <span>Map</span>
-                <span>click here</span>
-              </span>
-            </a>
-          </div>
-          <p style="font-size:var(--text-sm);color:var(--text-subtle);margin:0 0 16px">Heatherwood Hospital, Brook Ave, Ascot SL5 7GB</p>
-          <div class="fee-row"><span>First consultation</span><span class="amt">£250</span></div>
-          <div class="fee-row"><span>Follow-up consultation</span><span class="amt">£175</span></div>
-          <div class="fee-row"><span>Treatment</span><span class="amt">On request</span></div>
-        </div>
 
-        <div class="card card--lg">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
-            <h4 style="margin:0">Benenden Hospital</h4>
-            <a href="https://www.google.com/maps/search/?api=1&query=Benenden+Hospital,+Goddards+Green+Rd,+Cranbrook+TN17+4AX" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:var(--text-sm); font-weight:var(--fw-semibold); color:var(--color-primary); text-decoration:none;">
-              <i data-lucide="map-pin" style="width: 26px; height: 26px; flex-shrink: 0;"></i>
-              <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
-                <span>Map</span>
-                <span>click here</span>
-              </span>
-            </a>
+      <!-- The Split Directory Dashboard -->
+      <div class="card card--lg" style="max-width: 900px; margin: 0 auto; padding: 0; overflow: hidden;">
+        <div style="display: flex; flex-wrap: wrap;">
+          
+          <!-- Left Half: The Fees -->
+          <div style="flex: 1 1 350px; padding: 40px; background: var(--surface-tint); border-right: 1px solid var(--border-subtle);">
+            <h2 style="font-size: var(--text-2xl); color: var(--text-heading); margin-top: 0; margin-bottom: 32px;">Consultation Fees</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 24px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+                <span style="font-size: var(--text-base); color: var(--text-body);">First consultation</span>
+                <span style="font-size: var(--text-xl); font-weight: bold; color: var(--color-primary-strong);">£250</span>
+              </div>
+              
+              <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+                <span style="font-size: var(--text-base); color: var(--text-body);">Follow-up consultation</span>
+                <span style="font-size: var(--text-xl); font-weight: bold; color: var(--color-primary-strong);">£175</span>
+              </div>
+              
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <span style="font-size: var(--text-base); color: var(--text-body);">Treatment</span>
+                <span style="font-size: var(--text-lg); font-weight: bold; color: var(--color-primary-strong);">On request</span>
+              </div>
+            </div>
           </div>
-          <p style="font-size:var(--text-sm);color:var(--text-subtle);margin:0 0 16px">Goddard's Green Rd, Benenden, Cranbrook TN17 4AX</p>
-          <div class="fee-row"><span>First consultation</span><span class="amt">£250</span></div>
-          <div class="fee-row"><span>Follow-up consultation</span><span class="amt">£175</span></div>
-          <div class="fee-row"><span>Treatment</span><span class="amt">On request</span></div>
-        </div>
 
+          <!-- Right Half: The Locations -->
+          <div style="flex: 1 1 350px; padding: 40px;">
+            <h2 style="font-size: var(--text-2xl); color: var(--text-heading); margin-top: 0; margin-bottom: 32px;">Available Locations</h2>
+            
+            <div style="display: flex; flex-direction: column; gap: 32px;">
+              
+              <!-- Location 1: Frimley -->
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <h4 style="margin: 0 0 6px; color: var(--text-heading); font-size: var(--text-lg);">Parkside Suite, Frimley</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-muted); margin: 0; line-height: 1.5;">Frimley Park Hospital, Portsmouth Rd<br>Camberley GU16 7UJ</p>
+                </div>
+                <a href="#" style="text-align: center; color: var(--color-primary); text-decoration: none; font-size: var(--text-xs); font-weight: bold; padding-left: 16px;">
+                  <i data-lucide="map-pin" style="display: block; margin: 0 auto 4px;"></i> Map
+                </a>
+              </div>
+
+              <!-- Location 2: Heatherwood -->
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <h4 style="margin: 0 0 6px; color: var(--text-heading); font-size: var(--text-lg);">Parkside Suite, Heatherwood</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-muted); margin: 0; line-height: 1.5;">Heatherwood Hospital, Brook Ave<br>Ascot SL5 7GB</p>
+                </div>
+                <a href="#" style="text-align: center; color: var(--color-primary); text-decoration: none; font-size: var(--text-xs); font-weight: bold; padding-left: 16px;">
+                  <i data-lucide="map-pin" style="display: block; margin: 0 auto 4px;"></i> Map
+                </a>
+              </div>
+
+              <!-- Location 3: Benenden -->
+              <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                  <h4 style="margin: 0 0 6px; color: var(--text-heading); font-size: var(--text-lg);">Benenden Hospital</h4>
+                  <p style="font-size: var(--text-sm); color: var(--text-muted); margin: 0; line-height: 1.5;">Goddard's Green Rd, Benenden<br>Cranbrook TN17 4AX</p>
+                </div>
+                <a href="#" style="text-align: center; color: var(--color-primary); text-decoration: none; font-size: var(--text-xs); font-weight: bold; padding-left: 16px;">
+                  <i data-lucide="map-pin" style="display: block; margin: 0 auto 4px;"></i> Map
+                </a>
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
       </div>
-    </div>
+      
+    </div> 
+    <!-- SELF-PAY PANEL END -->
 
+    <!-- INSURED PANEL START -->
     <div data-panel="fees" data-panel-value="insured" hidden>
       <div class="card card--lg">
         <span class="badge badge--primary" style="margin-bottom:14px"><span class="dot"></span> Registered provider</span>
         <h4 style="margin:0 0 10px">Insured patients</h4>
-        <p style="font-size:var(--text-base);color:var(--text-muted);line-height:1.65;margin:0 0 18px">I am a registered provider with most major insurance companies. Please ensure you have your authorisation code ready before booking, and let me know if you have any queries. [ please note the below is not confirmed]</p>
+        <p style="font-size:var(--text-base);color:var(--text-muted);line-height:1.65;margin:0 0 18px">Miss Han Bin Lee is a registered provider with most major insurance companies. Please ensure you have your authorisation code ready before booking, and let me know if you have any queries. [ please note the below is not confirmed]</p>
         <div class="insurer-chips">
           <span>Aviva</span><span>AXA PPP Healthcare or AXA Health</span><span>Bupa</span><span>Cigna</span><span>CS Healthcare or Healix</span><span>Vitality</span><span>WPA</span>
         </div>
       </div>
     </div>
+    <!-- INSURED PANEL END -->
 
     <div class="callout mt-6">
       <span class="callout-icon"><i data-lucide="info"></i></span>
