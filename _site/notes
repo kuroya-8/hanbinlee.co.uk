@@ -1,0 +1,57 @@
+this is the old three tiles of locations and prices, future use?
+
+      <div class="fee-grid">
+        
+        <div class="card card--lg">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+            <h4 style="margin:0">Parkside Suite, Frimley</h4>
+            <a href="https://www.google.com/maps/search/?api=1&query=Frimley+Park+Hospital,+Portsmouth+Rd,+Camberley+GU16+7UJ" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:var(--text-sm); font-weight:var(--fw-semibold); color:var(--color-primary); text-decoration:none;">
+              <i data-lucide="map-pin" style="width: 26px; height: 26px; flex-shrink: 0;"></i>
+              <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
+                <span>Map</span>
+                <span>click here</span>
+              </span>
+            </a>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--text-subtle);margin:0 0 16px">Frimley Park Hospital, Portsmouth Rd, Camberley GU16 7UJ</p>
+          <div class="fee-row"><span>First consultation</span><span class="amt">£250</span></div>
+          <div class="fee-row"><span>Follow-up consultation</span><span class="amt">£175</span></div>
+          <div class="fee-row"><span>Treatment</span><span class="amt">On request</span></div>
+        </div>
+        
+        <div class="card card--lg">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+            <h4 style="margin:0">Parkside Suite, Heatherwood</h4>
+            <a href="https://www.google.com/maps/search/?api=1&query=Parkside+Suite,+Heatherwood+Hospital,+Brook+Avenue,+Ascot+SL5+7GB" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:var(--text-sm); font-weight:var(--fw-semibold); color:var(--color-primary); text-decoration:none;">
+              <i data-lucide="map-pin" style="width: 26px; height: 26px; flex-shrink: 0;"></i>
+              <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
+                <span>Map</span>
+                <span>click here</span>
+              </span>
+            </a>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--text-subtle);margin:0 0 16px">Heatherwood Hospital, Brook Ave, Ascot SL5 7GB</p>
+          <div class="fee-row"><span>First consultation</span><span class="amt">£250</span></div>
+          <div class="fee-row"><span>Follow-up consultation</span><span class="amt">£175</span></div>
+          <div class="fee-row"><span>Treatment</span><span class="amt">On request</span></div>
+        </div>
+
+        <div class="card card--lg">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+            <h4 style="margin:0">Benenden Hospital</h4>
+            <a href="https://www.google.com/maps/search/?api=1&query=Benenden+Hospital,+Goddards+Green+Rd,+Cranbrook+TN17+4AX" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; font-size:var(--text-sm); font-weight:var(--fw-semibold); color:var(--color-primary); text-decoration:none;">
+              <i data-lucide="map-pin" style="width: 26px; height: 26px; flex-shrink: 0;"></i>
+              <span style="display:flex; flex-direction:column; line-height:1.2; text-align:left;">
+                <span>Map</span>
+                <span>click here</span>
+              </span>
+            </a>
+          </div>
+          <p style="font-size:var(--text-sm);color:var(--text-subtle);margin:0 0 16px">Goddard's Green Rd, Benenden, Cranbrook TN17 4AX</p>
+          <div class="fee-row"><span>First consultation</span><span class="amt">£250</span></div>
+          <div class="fee-row"><span>Follow-up consultation</span><span class="amt">£175</span></div>
+          <div class="fee-row"><span>Treatment</span><span class="amt">On request</span></div>
+        </div>
+
+      </div>
+    </div>
