@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Miss Han Bin Lee — Consultant Ophthalmologist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miss Han Bin Lee — Consultant Ophthalmologist</title>
   <meta name="description" content="Consultant Ophthalmic Surgeon specialising in cataract surgery and complex corneal conditions in Surrey and Berkshire.">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/eye-favicon.svg">
+  <link rel="icon" href="/assets/images/eye-favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -37,7 +36,7 @@
 
 
 
-  <nav class="site-nav" data-nav><a href="/" class="is-active" aria-current="page">Home</a><a href="/clinical-profile/">Clinical Profile</a><a href="/fees/">Fees</a><a href="/press/">Press</a><a class="btn btn--primary btn--sm" href="/booking/">
+  <nav class="site-nav" data-nav><a href="/" class="is-active" aria-current="page">Home</a><a href="/clinical-profile/">Clinical Profile</a><a href="/treatmentsandservices/">Treatments & Services</a><a href="/fees/">Fees</a><a href="/press/">Press</a><a class="btn btn--primary btn--sm" href="/booking/">
 
       <i data-lucide="calendar-check"></i> Book
 
@@ -319,6 +318,19 @@
     }
   }
 </style>
+
+<style>
+  /* Force all top navigation links to be the brand teal color and thicker font */
+  .site-nav a:not(.btn) {
+    color: var(--color-primary) !important;
+    font-weight: 700 !important;
+  }
+  
+  /* Add a slight fade when a patient hovers over them with their mouse */
+  .site-nav a:not(.btn):hover {
+    opacity: 0.7 !important;
+  }
+</style>
   <main id="main">
     <section class="hero">
   <div class="hero-inner">
@@ -326,20 +338,34 @@
       <span class="eyebrow">Consultant Ophthalmic Surgeon · Surrey &amp; Berkshire</span>
       <h1>Clearer vision, expertly restored.</h1>
       <p class="lead">Miss Han Bin Lee (MBBS, BSc, FRCOphth, CertLRS) is a Consultant Ophthalmic Surgeon specialising in cataract surgery and complex corneal conditions — combining digital precision with patient-centred care.</p>
+      
       <div class="hero-tags">
         <span class="tag">Complex Cataract Surgery</span>
         <span class="tag">Corneal Conditions</span>
         <span class="tag">Dry Eye</span>
         <span class="tag">YAG Laser</span>
         <span class="tag">Premium Lenses</span>
-      
+      </div> 
+
+      <!-- Wider Side-by-Side Multi-Line Buttons -->
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; width: 100%; max-width: 600px;">
+        
+        <!-- Primary Button (3 Lines) -->
+        <a href="/booking/" class="btn btn--primary" style="flex: 1 1 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; white-space: normal; height: auto; line-height: 1.4; padding: 16px; text-align: center;">
+          <i data-lucide="calendar" style="margin-bottom: 6px;"></i>
+          <span>Speak to us<br>by booking a<br>consultation</span>
+        </a>
+
+        <!-- Secondary Button (2 Lines) -->
+        <a href="/profile/" class="btn" style="flex: 1 1 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; white-space: normal; height: auto; line-height: 1.4; padding: 16px; text-align: center; border: 2px solid var(--color-primary); color: var(--color-primary); background: transparent; font-weight: bold;">
+          <i data-lucide="square-user-round" style="margin-bottom: 6px;"></i>
+          <span>Meet the<br>consultant</span>
+        </a>
 
       </div>
-      <div class="hero-actions">
-        <a class="btn btn--primary btn--lg" href="/booking/"><i data-lucide="calendar-check"></i> Book a consultation</a>
-        <a class="btn btn--secondary btn--lg" href="/clinical-profile/">Meet the consultant</a>
-      </div>
+
     </div>
+    
     <div class="hero-figure">
       <div class="frame">
         <img src="/assets/images/habinleeatESCRS.png" alt="Miss Han Bin Lee">
@@ -412,7 +438,6 @@
     </div>
   </div>
 </section>
-
   </main>
   <footer class="site-footer">
   <div class="footer-grid">
@@ -425,7 +450,7 @@
     </div>
     <div class="footer-col">
       <h4>Practice</h4>
-      <ul><li><a href="/">Home</a></li><li><a href="/clinical-profile/">Clinical Profile</a></li><li><a href="/fees/">Fees</a></li><li><a href="/press/">Press</a></li><li><a href="/booking/">Book a consultation</a></li>
+      <ul><li><a href="/">Home</a></li><li><a href="/clinical-profile/">Clinical Profile</a></li><li><a href="/treatmentsandservices/">Treatments & Services</a></li><li><a href="/fees/">Fees</a></li><li><a href="/press/">Press</a></li><li><a href="/booking/">Book a consultation</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -460,7 +485,6 @@
 </div>
   </div>
 </footer>
-
 
   <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js"></script>
   <script src="/assets/js/site.js"></script>

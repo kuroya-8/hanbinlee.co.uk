@@ -12,20 +12,34 @@ description: "Consultant Ophthalmic Surgeon specialising in cataract surgery and
       <span class="eyebrow">Consultant Ophthalmic Surgeon · Surrey &amp; Berkshire</span>
       <h1>Clearer vision, expertly restored.</h1>
       <p class="lead">{{ site.practice.honorific }} {{ site.practice.full_name }} (MBBS, BSc, FRCOphth, CertLRS) is a Consultant Ophthalmic Surgeon specialising in cataract surgery and complex corneal conditions — combining digital precision with patient-centred care.</p>
+      
       <div class="hero-tags">
         <span class="tag">Complex Cataract Surgery</span>
         <span class="tag">Corneal Conditions</span>
         <span class="tag">Dry Eye</span>
         <span class="tag">YAG Laser</span>
         <span class="tag">Premium Lenses</span>
-      
+      </div> 
+
+      <!-- Wider Side-by-Side Multi-Line Buttons -->
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; width: 100%; max-width: 600px;">
+        
+        <!-- Primary Button (3 Lines) -->
+        <a href="/booking/" class="btn btn--primary" style="flex: 1 1 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; white-space: normal; height: auto; line-height: 1.4; padding: 16px; text-align: center;">
+          <i data-lucide="calendar" style="margin-bottom: 6px;"></i>
+          <span>Speak to us<br>by booking a<br>consultation</span>
+        </a>
+
+        <!-- Secondary Button (2 Lines) -->
+        <a href="/profile/" class="btn" style="flex: 1 1 220px; display: flex; flex-direction: column; justify-content: center; align-items: center; white-space: normal; height: auto; line-height: 1.4; padding: 16px; text-align: center; border: 2px solid var(--color-primary); color: var(--color-primary); background: transparent; font-weight: bold;">
+          <i data-lucide="square-user-round" style="margin-bottom: 6px;"></i>
+          <span>Meet the<br>consultant</span>
+        </a>
 
       </div>
-      <div class="hero-actions">
-        <a class="btn btn--primary btn--lg" href="{{ '/booking/' | relative_url }}"><i data-lucide="calendar-check"></i> Book a consultation</a>
-        <a class="btn btn--secondary btn--lg" href="{{ '/clinical-profile/' | relative_url }}">Meet the consultant</a>
-      </div>
+
     </div>
+    
     <div class="hero-figure">
       <div class="frame">
         <img src="{{ '/assets/images/habinleeatESCRS.png' | relative_url }}" alt="{{ site.practice.honorific }} {{ site.practice.full_name }}">

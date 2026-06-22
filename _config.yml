@@ -33,11 +33,11 @@ practice:
 
 # Primary navigation (order matters)
 nav:
-  - { id: home,    title: "Home",             url: "/" }
-  - { id: profile, title: "Clinical Profile", url: "/clinical-profile/" }
-  - { id: fees,    title: "Fees",             url: "/fees/" }
-  - { id: press,   title: "Press",            url: "/press/" }
-
+  - { id: home,                  title: "Home",                  url: "/" }
+  - { id: profile,               title: "Clinical Profile",      url: "/clinical-profile/" }
+  - { id: treatmentsandservices, title: "Treatments & Services", url: "/treatmentsandservices/" }
+  - { id: fees,                  title: "Fees",                  url: "/fees/" }
+  - { id: press,                 title: "Press",                 url: "/press/" }
 # ---- Build ----
 markdown: kramdown
 sass:

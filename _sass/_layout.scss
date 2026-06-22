@@ -221,3 +221,10 @@
      overflow-wrap: break-word !important;
   }
 }
+/* Force long button text to wrap onto multiple lines safely */
+.btn {
+  white-space: normal !important;
+  height: auto !important;
+  line-height: 1.4 !important;
+  text-align: center;
+}
