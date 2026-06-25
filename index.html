@@ -45,18 +45,29 @@ description: "Consultant Ophthalmic Surgeon specialising in cataract surgery and
         <img src="{{ '/assets/images/hanbinleeprofileavatar.png' | relative_url }}" alt="{{ site.practice.honorific }} {{ site.practice.full_name }}">
       </div>
       <div class="badge-float">
-        <span class="ico"><i data-lucide="aperture"></i></span>
+        <span class="ico"><i data-lucide="eye"></i></span>
         <span>
-          <span class="t" style="display:block">Miss Han Bin Lee at ESCRS</span>
-          <span class="s">Bella Centre, Copenhagen, Denmark. 2025</span>
+          <span class="t" style="display:block">Miss Han Bin Lee</span>
+          <span class="s">GMC 7304172 </span>
         </span>
       </div>
     </div>
   </div>
 </section>
 
+<style>
+  /* Hides the chunky desktop scrollbar while keeping mobile swiping active */
+  .trust-inner::-webkit-scrollbar { 
+    display: none; 
+  }
+  .trust-inner { 
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+</style>
+
 <section class="trust">
-  <div class="trust-inner">
+  <div class="trust-inner" style="display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; white-space: nowrap; overflow-x: auto;">
     <span class="trust-label">Practising at</span>
     {%- for place in site.practice.locations -%}
       <span class="place">{{ place | replace: " Foundation Trust", "" }}</span>
