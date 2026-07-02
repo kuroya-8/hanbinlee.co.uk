@@ -27,8 +27,8 @@ practice:
   honorific: "Miss"
   full_name: "Han Bin Lee"
   locations:
-    - "Frimley Park Hospital, Parkside Hospital"
-    - "Heatherwood Hospital, Parkside Hospital"
+    - "Frimley Park Hospital, Parkside Suite"
+    - "Heatherwood Hospital, Parkside Suite"
     - "Benenden Hospital"
 
 # Primary navigation (order matters)

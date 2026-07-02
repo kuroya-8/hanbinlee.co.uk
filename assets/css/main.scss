@@ -24,3 +24,143 @@
   font-family: 'Source Sans Pro'; font-style: italic; font-weight: 700; font-display: swap;
   src: url('{{ "/assets/fonts/source-sans-pro-bold-italic.woff2" | relative_url }}') format('woff2');
 }
+/* =========================================
+   SUPERCHARGED DARK MODE FIXES
+   ========================================= */
+
+/* 1. Deep Background (Fixes white sides & main page backgrounds) */
+html.dark-theme,
+body.dark-theme,
+body.dark-theme main,
+body.dark-theme .section,
+body.dark-theme .section--mist,
+body.dark-theme .page-hero,
+body.dark-theme .hero,
+body.dark-theme .wrapper {
+  background-color: #121212 !important;
+  background-image: none !important; /* Removes light gradients */
+}
+
+/* 2. Elevated Cards & Split Panels (Fixes Fees & Press cards) */
+body.dark-theme .card,
+body.dark-theme .card > div,
+body.dark-theme .hero-inner,
+body.dark-theme .doctify-widget,
+body.dark-theme .badge-float,
+body.dark-theme .frame,
+body.dark-theme .tag,
+body.dark-theme .btn--secondary,
+body.dark-theme .btn--outline,
+body.dark-theme .contact-row,
+body.dark-theme .fact,
+body.dark-theme aside,
+body.dark-theme .alert-info,
+body.dark-theme .callout { /* <-- Added the correct class name here! */
+  background-color: #1e1e1e !important;
+  border: 1px solid #333333 !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5) !important;
+  color: #f3f4f6 !important;
+}
+
+/* 3. Global Typography (Fixes invisible text on all pages) */
+body.dark-theme,
+body.dark-theme p,
+body.dark-theme h1, body.dark-theme h2, 
+body.dark-theme h3, body.dark-theme h4, 
+body.dark-theme li, body.dark-theme .lead, 
+body.dark-theme .eyebrow,
+body.dark-theme .fk, body.dark-theme .fv,
+body.dark-theme .pname, body.dark-theme .prole,
+body.dark-theme span:not(.btn) {
+  color: #f3f4f6 !important;
+}
+
+/* 4. Keep Links Visible & Blue */
+body.dark-theme a:not(.btn):not(.card) {
+  color: #60a5fa !important; 
+}
+
+/* 5. Force Header icons to stay visible */
+body.dark-theme .header-accessibility button,
+body.dark-theme .header-accessibility span,
+body.dark-theme .site-header i {
+  color: #f3f4f6 !important;
+}
+
+/* 6. Blockquotes and Callouts */
+body.dark-theme .quote, 
+body.dark-theme blockquote {
+  color: #f3f4f6 !important; /* Makes the text bright and readable */
+  border-left-color: #2dd4bf !important; /* A bright, glowing teal for the vertical line */
+}
+/* 7. Fix Invisible Service Icons */
+body.dark-theme .card .ico,
+body.dark-theme .service .ico {
+  background-color: rgba(45, 212, 191, 0.15) !important; /* Soft, transparent dark-teal box */
+  color: #2dd4bf !important; /* Bright teal icon */
+}
+/* 8. Fix Fees Page (Self-pay & Insured) and Alert Boxes */
+
+/* Redefine the theme's light blue "tint" to become dark gray */
+body.dark-theme {
+  --surface-tint: #1e1e1e !important; 
+}
+
+/* Strip the white background off the left half of the pricing card */
+/* This allows the dark background of the main card to show through evenly */
+body.dark-theme .card > div,
+body.dark-theme .card > section {
+  background-color: transparent !important; 
+}
+
+/* Force the "Good to know" box to go dark if it isn't using the surface-tint variable */
+body.dark-theme div[style*="background: #"],
+body.dark-theme div[style*="background-color: #"] {
+  background-color: #1e1e1e !important;
+  color: #f3f4f6 !important;
+  border: 1px solid #333333 !important;
+}
+
+/* Ensure all the location text inside the left panel turns bright white */
+body.dark-theme .card > div h2,
+body.dark-theme .card > div h3,
+body.dark-theme .card > div p,
+body.dark-theme .card > div span:not(.tag):not(.btn) {
+  color: #f3f4f6 !important;
+}
+/* 9. Site Header / Navigation Bar */
+body.dark-theme .site-header {
+  background-color: #1e1e1e !important; /* Elevated dark gray to stand out from the page */
+  border-bottom: 1px solid #333333 !important; /* Subtle separator line */
+}
+
+/* Ensure the logo name/role text stays perfectly white */
+body.dark-theme .site-header .name,
+body.dark-theme .site-header .role {
+  color: #f3f4f6 !important;
+}
+/* 10. Fix Circular Contact Icons (Phone & WhatsApp) - Clean & Borderless */
+body.dark-theme a.icon-btn {
+  background-color: #2a2a2a !important; /* A solid dark gray circle (slightly lighter than the card) */
+  border: none !important; /* Completely removes the teal border */
+  color: #f3f4f6 !important; /* Bright white icon */
+}
+
+/* Force the icon inside to match perfectly */
+body.dark-theme a.icon-btn i,
+body.dark-theme a.icon-btn svg {
+  color: #f3f4f6 !important;
+  stroke: #f3f4f6 !important; 
+}
+
+/* 11. Fix "Registered Provider" Badge */
+body.dark-theme .badge--primary {
+  background-color: rgba(45, 212, 191, 0.15) !important; /* Soft transparent teal background */
+  color: #2dd4bf !important; /* Bright teal text */
+  border: 1px solid rgba(45, 212, 191, 0.3) !important; /* Subtle teal border */
+}
+
+/* Fix the little indicator dot inside the badge */
+body.dark-theme .badge--primary .dot {
+  background-color: #2dd4bf !important; 
+}
