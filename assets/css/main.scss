@@ -164,3 +164,68 @@ body.dark-theme .badge--primary {
 body.dark-theme .badge--primary .dot {
   background-color: #2dd4bf !important; 
 }
+
+.trust-inner {
+  display: flex;
+  flex-direction: column; /* Stacks vertically on mobile */
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+/* Switches back to a single row on screens wider than 768px */
+@media (min-width: 768px) {
+  .trust-inner {
+    flex-direction: row;
+  }
+}
+/* Mobile First Layout: Icon and Heading side-by-side */
+.card-header-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Vertically centers the text with the icon */
+  gap: 15px; /* Adds space between the icon and the text */
+  margin-bottom: 12px; /* Adds space above the paragraph */
+}
+
+/* Desktop Layout: Revert to stacked (adjust the 768px breakpoint if needed) */
+@media (min-width: 768px) {
+  .card-header-group {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left edge */
+    gap: 15px; /* Adds space between the icon and text vertically */
+  }
+}
+/* The Capsule Button */
+.capsule-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; 
+  background-color: #3B5B63; 
+  color: #C9E4E0; 
+  padding: 14px 32px;
+  border-radius: 999px; 
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); 
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 32px; /* Space between button and the H1 */
+}
+
+/* Hover Effect */
+.capsule-back-btn:hover {
+  background-color: #2F4A51; 
+  color: #FFFFFF; 
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); 
+}
+
+/* Icon Sizing */
+.capsule-back-btn .back-icon {
+  width: 20px;
+  height: 20px;
+}
