@@ -4,12 +4,11 @@ title: Privacy Policy
 permalink: /privacy-policy/
 ---
 
-This is where you type the actual text of your Privacy Policy. 
+<a href="javascript:history.back()" class="btn btn--outline" style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; text-decoration: none;">
+  <i data-lucide="arrow-left" style="width: 18px; height: 18px;"></i>
+  Go Back
+</a>
 
-You can use standard Markdown to format your text:
-* Use hashtags for headings, like **## Information We Collect**
-* Use asterisks to make things **bold**
-* Use bullet points to create lists
 
 At **Han Bin Lee**, we are committed to protecting your privacy and ensuring your personal data is handled securely and transparently.
 
@@ -49,8 +48,8 @@ Your data may be shared with:
 * Medical insurers
 * Regulatory bodies where required
 
-## Online Booking & Doctify
-If you book appointments via third-party platforms (e.g. Doctify or other online booking systems):
+## Online Booking, Carebit & Doctify
+If you book appointments via third-party platforms (e.g. Carebit, Doctify or other online booking systems):
 * Your personal data may be collected and processed by those providers
 * They act as independent data controllers or processors depending on the service
 * Their use of your data is governed by their own privacy policies
@@ -78,3 +77,4 @@ If you have concerns, please contact us directly. You may also complain to the I
 
 ## Updates
 This Privacy Notice may be updated periodically.
+

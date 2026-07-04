@@ -11,40 +11,91 @@
 </head>
 <body>
   <header class="site-header">
-
   <a class="brand" href="/">
-
     <img src="/assets/images/eye-favicon.svg" alt="">
-
     <span>
-
       <span class="name" style="display:block">Miss Han Bin Lee</span>
-
       <span class="role">Consultant Ophthalmologist</span>
-
     </span>
-
   </a>
 
-
-
   <button class="nav-toggle icon-btn" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-
     <i data-lucide="menu"></i>
-
   </button>
 
-
-
   <nav class="site-nav" data-nav><a href="/">Home</a><a href="/clinical-profile/">Clinical Profile</a><a href="/treatmentsandservices/">Treatments & Services</a><a href="/fees/">Fees</a><a href="/press/">Press</a><a class="btn btn--primary btn--sm" href="/booking/">
-
       <i data-lucide="calendar-check"></i> Book
-
     </a>
 
-  </nav>
+    <!-- Header Accessibility Controls (MOVED INSIDE THE NAV) -->
+    <div class="header-accessibility" style="display: inline-flex; gap: 12px; align-items: center; margin-left: 15px;">
+      <button onclick="adjustTextSize(-1)" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Smaller Text">
+        <i data-lucide="a-arrow-down" style="width: 28px; height: 28px; color: currentColor;"></i>
+      </button>
+      
+      <button onclick="resetTextSize()" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Reset Text">
+        <i data-lucide="rotate-ccw" style="width: 24px; height: 24px; color: currentColor;"></i> 
+      </button>
+      
+      <button onclick="adjustTextSize(1)" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Larger Text">
+        <i data-lucide="a-arrow-up" style="width: 28px; height: 28px; color: currentColor;"></i>
+      </button>
 
+      <span style="border-left: 2px solid currentColor; opacity: 0.3; height: 28px; margin: 0 8px;"></span>
+
+      <button onclick="toggleDarkMode()" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Toggle Dark Mode">
+        <i data-lucide="moon-star" style="width: 28px; height: 28px; color: currentColor;"></i>
+      </button>
+    </div>
+  </nav>
 </header>
+
+<!-- THE REST OF YOUR CODE STAYS EXACTLY THE SAME BELOW THIS LINE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Miss Han Bin Lee",
+  "jobTitle": "Consultant Ophthalmologist",
+  "description": "Consultant Ophthalmologist specialising in cataract surgery and corneal conditions.",
+  "url": "https://www.hanbinlee.co.uk",
+  "telephone": "07737228164",
+  "email": "info@hanbinlee.co.uk",
+  "medicalSpecialty": "Ophthalmology",
+  "location": [
+    {
+      "@type": "MedicalClinic",
+      "name": "Parkside Suite, Frimley Park Hospital",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Camberley",
+        "postalCode": "GU16 7UJ",
+        "addressCountry": "GB"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "name": "Parkside Suite, Heatherwood Hospital",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ascot",
+        "postalCode": "SL5 7GB",
+        "addressCountry": "GB"
+      }
+    }
+  ],
+  "hospitalAffiliation": [
+    {
+      "@type": "Hospital",
+      "name": "Frimley Health NHS Foundation Trust"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Benenden Hospital"
+    }
+  ]
+}
+</script>
 
 
 <!-- Header Accessibility Controls -->
@@ -420,19 +471,29 @@
     </div>
     <div class="footer-col">
       <h4>Practice</h4>
-      <ul><li><a href="/">Home</a></li><li><a href="/clinical-profile/">Clinical Profile</a></li><li><a href="/treatmentsandservices/">Treatments & Services</a></li><li><a href="/fees/">Fees</a></li><li><a href="/press/">Press</a></li><li><a href="/booking/">Book a consultation</a></li>
+      <ul><li><a href="/">Home</a></li><li><a href="/clinical-profile/">Clinical Profile</a></li><li><a href="/treatmentsandservices/">Treatments & Services</a></li><li><a href="/fees/">Fees</a></li><li><a href="/press/">Press</a></li><!-- Example of highlighting just the CTA -->
+<li>
+  <a class="line" href="/booking/" style="display:inline-flex; align-items:center; text-decoration:none; font-weight: bold;">
+    <i data-lucide="calendar" style="width:16px; height:16px; margin-right:8px;"></i>
+    <span>Book a consultation</span>
+  </a>
+</li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-<li><span class="line">To contact Miss Lee's private secretary:</span></li>
-<li><a class="line" href="tel:+447737228164">Appointments: 07737 228 164</a></li>
-<li><a class="line" href="https://wa.me/447737228164">WhatsApp available - click here</a></li>
-<li><a class="line" href="mailto:info@hanbinlee.co.uk">Email: info@hanbinlee.co.uk</a></li>
-<li><a class="line" href="https://www.google.com/maps/search/?api=1&query=Frimley+Park+Hospital,+Portsmouth+Rd,+Camberley+GU16+7UJ" target="_blank" rel="noopener noreferrer">Parkside Suite, Frimley Park Hospital<br>Camberley, GU16 7UJ</a></li>
+        <li style="list-style:none; margin-bottom:12px;"><a class="line" href="tel:07737228164" style="display:inline-flex; align-items:center; text-decoration:none;"><i data-lucide="phone" style="width:20px; height:20px; margin-right:12px;"></i><span>07737 228 164</span></a></li>
+<li style="list-style: none; margin-bottom: 12px;">
+  <a class="line" href="https://wa.me/447737228164" style="display: inline-flex; align-items: center; text-decoration: none;">
+    <i data-lucide="message-circle" style="width: 20px; height: 20px; min-width: 20px; margin-right: 12px; color: inherit;"></i>
+    <span>Message via WhatsApp</span>
+  </a>
+</li>
+<li style="list-style:none; margin-bottom:12px;"><a class="line" href="mailto:info@hanbinlee.co.uk" style="display:inline-flex; align-items:center; text-decoration:none;"><i data-lucide="mail" style="width:20px; height:20px; margin-right:12px;"></i><span>Email: info@hanbinlee.co.uk</span></a></li>
+<li style="list-style:none; margin-bottom:12px;"><a class="line" href="https://www.google.com/maps/search/?api=1&query=Frimley+Park+Hospital,+Portsmouth+Rd,+Camberley+GU16+7UJ" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:flex-start; text-decoration:none;"><i data-lucide="map-pin" style="width:20px; height:20px; min-width:20px; margin-right:12px; margin-top:2px;"></i><span>Parkside Suite, Frimley Park Hospital<br>Camberley, GU16 7UJ</span></a></li>
 
-<li><a class="line" href="https://www.google.com/maps/search/?api=1&query=Parkside+Suite,+Heatherwood+Hospital,+Brook+Avenue,+Ascot+SL5+7GB" target="_blank" rel="noopener noreferrer">Parkside Suite, Heatherwood Hospital<br>Ascot, SL5 7GB</a></li>
+<li style="list-style:none; margin-bottom:12px;"><a class="line" href="https://www.google.com/maps/search/?api=1&query=Parkside+Suite,+Heatherwood+Hospital,+Brook+Avenue,+Ascot+SL5+7GB" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:flex-start; text-decoration:none;"><i data-lucide="map-pin" style="width:20px; height:20px; min-width:20px; margin-right:12px; margin-top:2px;"></i><span>Parkside Suite, Heatherwood Hospital<br>Ascot, SL5 7GB</span></a></li>
       </ul>
     </div>
   </div>

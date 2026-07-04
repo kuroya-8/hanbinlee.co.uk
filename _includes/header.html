@@ -1,46 +1,94 @@
 <header class="site-header">
-
   <a class="brand" href="{{ '/' | relative_url }}">
-
     <img src="{{ '/assets/images/eye-favicon.svg' | relative_url }}" alt="">
-
     <span>
-
       <span class="name" style="display:block">{{ site.practice.honorific }} {{ site.practice.full_name }}</span>
-
       <span class="role">{{ site.tagline }}</span>
-
     </span>
-
   </a>
 
-
-
   <button class="nav-toggle icon-btn" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
-
     <i data-lucide="menu"></i>
-
   </button>
 
-
-
   <nav class="site-nav" data-nav>
-
     {%- for item in site.nav -%}
-
       <a href="{{ item.url | relative_url }}"{% if page.nav_id == item.id %} class="is-active" aria-current="page"{% endif %}>{{ item.title }}</a>
-
     {%- endfor -%}
-
+    
     <a class="btn btn--primary btn--sm" href="{{ '/booking/' | relative_url }}">
-
       <i data-lucide="calendar-check"></i> Book
-
     </a>
 
-  </nav>
+    <!-- Header Accessibility Controls (MOVED INSIDE THE NAV) -->
+    <div class="header-accessibility" style="display: inline-flex; gap: 12px; align-items: center; margin-left: 15px;">
+      <button onclick="adjustTextSize(-1)" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Smaller Text">
+        <i data-lucide="a-arrow-down" style="width: 28px; height: 28px; color: currentColor;"></i>
+      </button>
+      
+      <button onclick="resetTextSize()" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Reset Text">
+        <i data-lucide="rotate-ccw" style="width: 24px; height: 24px; color: currentColor;"></i> 
+      </button>
+      
+      <button onclick="adjustTextSize(1)" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Larger Text">
+        <i data-lucide="a-arrow-up" style="width: 28px; height: 28px; color: currentColor;"></i>
+      </button>
 
+      <span style="border-left: 2px solid currentColor; opacity: 0.3; height: 28px; margin: 0 8px;"></span>
+
+      <button onclick="toggleDarkMode()" style="cursor: pointer; background: none; border: none; padding: 4px; display: flex; align-items: center;" title="Toggle Dark Mode">
+        <i data-lucide="moon-star" style="width: 28px; height: 28px; color: currentColor;"></i>
+      </button>
+    </div>
+  </nav>
 </header>
+
+<!-- THE REST OF YOUR CODE STAYS EXACTLY THE SAME BELOW THIS LINE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Miss Han Bin Lee",
+  "jobTitle": "Consultant Ophthalmologist",
+  "description": "Consultant Ophthalmologist specialising in cataract surgery and corneal conditions.",
+  "url": "https://www.hanbinlee.co.uk",
+  "telephone": "07737228164",
+  "email": "info@hanbinlee.co.uk",
+  "medicalSpecialty": "Ophthalmology",
+  "location": [
+    {
+      "@type": "MedicalClinic",
+      "name": "Parkside Suite, Frimley Park Hospital",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Camberley",
+        "postalCode": "GU16 7UJ",
+        "addressCountry": "GB"
+      }
+    },
+    {
+      "@type": "MedicalClinic",
+      "name": "Parkside Suite, Heatherwood Hospital",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ascot",
+        "postalCode": "SL5 7GB",
+        "addressCountry": "GB"
+      }
+    }
+  ],
+  "hospitalAffiliation": [
+    {
+      "@type": "Hospital",
+      "name": "Frimley Health NHS Foundation Trust"
+    },
+    {
+      "@type": "Hospital",
+      "name": "Benenden Hospital"
+    }
+  ]
+}
+</script>
 
 
 <!-- Header Accessibility Controls -->

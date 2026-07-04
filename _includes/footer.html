@@ -15,19 +15,29 @@
         {%- for item in site.nav -%}
           <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
         {%- endfor -%}
-        <li><a href="{{ '/booking/' | relative_url }}">Book a consultation</a></li>
+<!-- Example of highlighting just the CTA -->
+<li>
+  <a class="line" href="/booking/" style="display:inline-flex; align-items:center; text-decoration:none; font-weight: bold;">
+    <i data-lucide="calendar" style="width:16px; height:16px; margin-right:8px;"></i>
+    <span>Book a consultation</span>
+  </a>
+</li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-<li><span class="line">To contact Miss Lee's private secretary:</span></li>
-<li><a class="line" href="{{ site.practice.phone_href }}">Appointments: {{ site.practice.phone }}</a></li>
-<li><a class="line" href="{{ site.practice.whatsapp }}">WhatsApp available - click here</a></li>
-<li><a class="line" href="mailto:info@hanbinlee.co.uk">Email: info@hanbinlee.co.uk</a></li>
-<li><a class="line" href="https://www.google.com/maps/search/?api=1&query=Frimley+Park+Hospital,+Portsmouth+Rd,+Camberley+GU16+7UJ" target="_blank" rel="noopener noreferrer">Parkside Suite, Frimley Park Hospital<br>Camberley, GU16 7UJ</a></li>
+        <li style="list-style:none; margin-bottom:12px;"><a class="line" href="tel:07737228164" style="display:inline-flex; align-items:center; text-decoration:none;"><i data-lucide="phone" style="width:20px; height:20px; margin-right:12px;"></i><span>07737 228 164</span></a></li>
+<li style="list-style: none; margin-bottom: 12px;">
+  <a class="line" href="{{ site.practice.whatsapp }}" style="display: inline-flex; align-items: center; text-decoration: none;">
+    <i data-lucide="message-circle" style="width: 20px; height: 20px; min-width: 20px; margin-right: 12px; color: inherit;"></i>
+    <span>Message via WhatsApp</span>
+  </a>
+</li>
+<li style="list-style:none; margin-bottom:12px;"><a class="line" href="mailto:info@hanbinlee.co.uk" style="display:inline-flex; align-items:center; text-decoration:none;"><i data-lucide="mail" style="width:20px; height:20px; margin-right:12px;"></i><span>Email: info@hanbinlee.co.uk</span></a></li>
+<li style="list-style:none; margin-bottom:12px;"><a class="line" href="https://www.google.com/maps/search/?api=1&query=Frimley+Park+Hospital,+Portsmouth+Rd,+Camberley+GU16+7UJ" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:flex-start; text-decoration:none;"><i data-lucide="map-pin" style="width:20px; height:20px; min-width:20px; margin-right:12px; margin-top:2px;"></i><span>Parkside Suite, Frimley Park Hospital<br>Camberley, GU16 7UJ</span></a></li>
 
-<li><a class="line" href="https://www.google.com/maps/search/?api=1&query=Parkside+Suite,+Heatherwood+Hospital,+Brook+Avenue,+Ascot+SL5+7GB" target="_blank" rel="noopener noreferrer">Parkside Suite, Heatherwood Hospital<br>Ascot, SL5 7GB</a></li>
+<li style="list-style:none; margin-bottom:12px;"><a class="line" href="https://www.google.com/maps/search/?api=1&query=Parkside+Suite,+Heatherwood+Hospital,+Brook+Avenue,+Ascot+SL5+7GB" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:flex-start; text-decoration:none;"><i data-lucide="map-pin" style="width:20px; height:20px; min-width:20px; margin-right:12px; margin-top:2px;"></i><span>Parkside Suite, Heatherwood Hospital<br>Ascot, SL5 7GB</span></a></li>
       </ul>
     </div>
   </div>
