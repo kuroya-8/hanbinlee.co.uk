@@ -10,4 +10,4 @@ permalink: /cookies-policy/
 </a>
 
 ## Cookies
-This website currently does not use any cookies or tracking scripts. If we introduce functional or analytical cookies in the future, this policy will be updated, and your consent will be requested. You can control cookies via your browser settings.
+This website currently does not use any cookies or tracking scripts. If we introduce functional or analytical cookies in the future, this policy will be updated, and your consent will be requested. You can also control cookies via your browser settings.
