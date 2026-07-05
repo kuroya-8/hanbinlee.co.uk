@@ -10,7 +10,7 @@ permalink: /privacy-policy/
 </a>
 
 
-At **Han Bin Lee**, we are committed to protecting your privacy and ensuring your personal data is handled securely and transparently.
+At **HanBinLee.co.uk**, we are committed to protecting your privacy and ensuring your personal data is handled securely and transparently.
 
 ## Who We Are
 **Data Controller:** Han Bin Lee
