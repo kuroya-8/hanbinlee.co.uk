@@ -19,7 +19,7 @@ description: "Consultant Ophthalmic Surgeon specialising in cataract surgery and
         <span class="tag">Corneal Conditions</span>
         <span class="tag">Dry Eye</span>
         <span class="tag">YAG Laser</span>
-            </div> 
+            </div>
 
       <!-- Wider Side-by-Side Multi-Line Buttons -->
       <div style="display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; width: 100%; max-width: 600px;">
@@ -57,12 +57,20 @@ description: "Consultant Ophthalmic Surgeon specialising in cataract surgery and
 
 <style>
   /* Hides the chunky desktop scrollbar while keeping mobile swiping active */
-  .trust-inner::-webkit-scrollbar { 
-    display: none; 
+  .trust-inner::-webkit-scrollbar {
+    display: none;
   }
-  .trust-inner { 
+  .trust-inner {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
+  }
+
+  /* Treatment Card Hover Animation */
+  .treatment-card-link {
+    transition: transform 0.3s ease;
+  }
+  .treatment-card-link:hover {
+    transform: translateY(-5px);
   }
 </style>
 
@@ -81,27 +89,45 @@ description: "Consultant Ophthalmic Surgeon specialising in cataract surgery and
       <span class="eyebrow">Specialist Services</span>
       <h2>Focused expertise across the anterior eye</h2>
     </div>
+    
     <div class="services-grid">
-      <div class="card card--interactive service">
-        <span class="ico"><i data-lucide="eye"></i></span>
-        <h3>Cataract surgery</h3>
-        <p>Premium lens cataract surgery to restore clear, comfortable vision with rapid recovery.</p>
-      </div>
-      <div class="card card--interactive service">
-        <span class="ico"><i data-lucide="scan-eye"></i></span>
-        <h3>Corneal conditions</h3>
-        <p>Diagnosis and surgical treatment of complex corneal disease, including artificial cornea transplantation.</p>
-      </div>
-      <div class="card card--interactive service">
-        <span class="ico"><i data-lucide="droplet"></i></span>
-        <h3>Dry eye management</h3>
-        <p>Thorough assessment and tailored treatment plans for persistent dry and irritated eyes.</p>
-      </div>
-      <div class="card card--interactive service">
-        <span class="ico"><i data-lucide="zap"></i></span>
-        <h3>YAG laser capsulotomy</h3>
-        <p>Quick, painless laser treatment for clouding that can occur after cataract surgery.</p>
-      </div>
+      
+      <!-- Cataract Card -->
+      <a href="{{ '/treatments/complex-cataract-surgery/' | relative_url }}" class="treatment-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <div class="card card--interactive service" style="height: 100%;">
+          <span class="ico"><i data-lucide="eye"></i></span>
+          <h3>Cataract surgery</h3>
+          <p>Premium lens cataract surgery to restore clear, comfortable vision with rapid recovery.</p>
+        </div>
+      </a>
+
+      <!-- Corneal Card -->
+      <a href="{{ '/treatments/corneal-conditions/' | relative_url }}" class="treatment-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <div class="card card--interactive service" style="height: 100%;">
+          <span class="ico"><i data-lucide="scan-eye"></i></span>
+          <h3>Corneal conditions</h3>
+          <p>Diagnosis and surgical treatment of complex corneal disease, including artificial cornea transplantation.</p>
+        </div>
+      </a>
+
+      <!-- Dry Eye Card -->
+      <a href="{{ '/treatments/dry-eye/' | relative_url }}" class="treatment-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <div class="card card--interactive service" style="height: 100%;">
+          <span class="ico"><i data-lucide="droplet"></i></span>
+          <h3>Dry eye management</h3>
+          <p>Thorough assessment and tailored treatment plans for persistent dry and irritated eyes.</p>
+        </div>
+      </a>
+
+      <!-- YAG Laser Card -->
+      <a href="{{ '/treatments/yag-laser/' | relative_url }}" class="treatment-card-link" style="text-decoration: none; color: inherit; display: block;">
+        <div class="card card--interactive service" style="height: 100%;">
+          <span class="ico"><i data-lucide="zap"></i></span>
+          <h3>YAG laser capsulotomy</h3>
+          <p>Quick, painless laser treatment for clouding that can occur after cataract surgery.</p>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
