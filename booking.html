@@ -51,8 +51,9 @@ description: "Request an appointment with Miss Han Bin Lee. The practice confirm
   
   <div class="location-toggle-container">
     <div class="location-toggle">
-      <button id="tab-frimley" class="pill-btn active" onclick="switchLocation('frimley')">Parkside Suite, Frimley</button>
-      <button id="tab-heatherwood" class="pill-btn" onclick="switchLocation('heatherwood')">Parkside Suite, Heatherwood</button>
+      <button id="tab-frimley" class="pill-btn active" onclick="switchLocation('frimley')">Parkside Suite, Frimley Hospital</button>
+      <button id="tab-heatherwood" class="pill-btn" onclick="switchLocation('heatherwood')">Parkside Suite, Heatherwood Hospital</button>
+      <button id="tab-benenden" class="pill-btn" onclick="switchLocation('benenden')">Benenden Hospital</button>
     </div>
   </div>
 
@@ -70,27 +71,33 @@ description: "Request an appointment with Miss Han Bin Lee. The practice confirm
 <!-- 3. The Logic to Swap the Links -->
 <script>
   function switchLocation(location) {
-    // Select the buttons and the main link
+    // Select all buttons and the main link
     const btnFrimley = document.getElementById('tab-frimley');
     const btnHeatherwood = document.getElementById('tab-heatherwood');
+    const btnBenenden = document.getElementById('tab-benenden');
     const ctaButton = document.getElementById('booking-cta');
 
-    // Remove the active white background from both
+    // Remove active class from all buttons
     btnFrimley.classList.remove('active');
     btnHeatherwood.classList.remove('active');
+    btnBenenden.classList.remove('active');
 
-    // Apply the correct active state and update the link + text
+    // Highlight selected tab and update booking link
     if (location === 'frimley') {
       btnFrimley.classList.add('active');
       ctaButton.href = "https://parkside-suite-frimley.org.uk/consultants/miss-lee-han-bin/";
       ctaButton.innerHTML = 'Continue to Frimley Booking <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>';
-    } else {
+    } else if (location === 'heatherwood') {
       btnHeatherwood.classList.add('active');
       ctaButton.href = "https://parkside-suite-heatherwood.org.uk/consultants/miss-han-bin-lee/";
       ctaButton.innerHTML = 'Continue to Heatherwood Booking <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>';
+    } else if (location === 'benenden') {
+      btnBenenden.classList.add('active');
+      ctaButton.href = "https://www.benendenhospital.org.uk/consultants/miss-lee-han-bin/";
+      ctaButton.innerHTML = 'Continue to Benenden Booking <i data-lucide="external-link" style="width: 20px; height: 20px;"></i>';
     }
     
-    // Refresh the Lucide icons so the arrow doesn't disappear when swapped
+    // Refresh Lucide icon after text change
     if (typeof lucide !== 'undefined') {
       lucide.createIcons();
     }
